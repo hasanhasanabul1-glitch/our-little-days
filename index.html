@@ -1,1793 +1,26 @@
 <!doctype html>
-<html lang="en" data-visualize-standalone>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>我们的小日子</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#efe9e0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11100f" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="情侣点菜、周末出游与共同投票">
+  <title>我们的小日子</title>
+  <style>
+    html {
+      min-height: 100%;
+      background: light-dark(#efe9e0, #11100f);
+    }
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="我们的小日子" data-srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;我们的小日子&lt;/title&gt;
-&lt;style&gt;:root {
-  color-scheme: light dark;
-  background-color: var(
-    --background,
-    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
-  ) !important;
-
-  /* Agent-facing contract; keep in sync with SKILL.md. */
-  --background: var(
-    --color-background-primary,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
-  --card-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --popover: var(
-    --color-background-secondary,
-    light-dark(rgb(255 255 255), rgb(45 45 45))
-  );
-  --popover-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --primary: var(
-    --color-text-info,
-    light-dark(rgb(51 156 255), rgb(131 195 255))
-  );
-  --primary-foreground: var(
-    --color-text-inverse,
-    light-dark(rgb(255 255 255), rgb(13 13 13))
-  );
-  --secondary: var(
-    --color-background-secondary,
-    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
-  );
-  --secondary-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
-  --muted-foreground: var(
-    --color-text-secondary,
-    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
-  );
-  --accent: var(
-    --color-background-info,
-    light-dark(rgb(229 242 255), rgb(13 39 63))
-  );
-  --accent-foreground: var(
-    --color-text-info,
-    light-dark(rgb(51 156 255), rgb(131 195 255))
-  );
-  --destructive: var(
-    --color-text-warning,
-    light-dark(rgb(226 85 7), rgb(255 133 73))
-  );
-  --border: var(
-    --color-border-secondary,
-    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
-  );
-  --input: var(
-    --color-border-primary,
-    light-dark(
-      rgb(26 28 31 / 11.8%),
-      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
-    )
-  );
-  --ring: var(
-    --color-ring-primary,
-    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
-  );
-  --font-size-base: var(--font-text-md-size, 16px);
-  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
-  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
-  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
-  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
-  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
-  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
-  --viz-series-1: var(--primary);
-  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
-  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
-  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
-  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
-  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
-
-  /* Internal implementation variables; not part of the agent contract. */
-  --font-sans:
-    -apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;,
-    Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;,
-    &quot;Segoe UI Symbol&quot;;
-  --font-mono:
-    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
-    monospace;
-  --font-size-normal: max(11px, var(--font-size-base));
-  --font-size-tooltip: calc(var(--font-size-base) - 1px);
-  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
-  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
-  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
-  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --icon-size: 16px;
-  --line-height-normal: calc(var(--font-size-normal) * 1.5);
-  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
-  --line-height-small: calc(var(--font-size-small) + 4px);
-  --corner-shape: round;
-  --radius: var(--border-radius-lg, 8px);
-  --radius-sm: calc(var(--radius) * 0.5);
-  --radius-md: calc(var(--radius) * 0.75);
-  --radius-lg: var(--radius);
-  --radius-2xl: calc(var(--radius) * 2);
-  --radius-full: 9999px;
-  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
-  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
-
-  /* Legacy aliases; not part of the current agent contract. */
-  --viz-bg: transparent;
-  --viz-panel: var(--card);
-  --viz-border: var(--border);
-  --viz-text: var(--foreground);
-  --viz-muted: var(--muted-foreground);
-  --viz-accent: var(--primary);
-  --viz-accent-text: var(--primary-foreground);
-  --viz-accent-bg: var(--accent);
-  --viz-font-size: var(--font-size-base);
-  --viz-warning: var(--destructive);
-}
-
-:root[data-theme=&quot;light&quot;] {
-  color-scheme: light;
-}
-
-:root[data-theme=&quot;dark&quot;] {
-  color-scheme: dark;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html &gt; body {
-  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
-  --color-background-primary: var(
-    --background,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --color-text-primary: var(
-    --foreground,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --color-border-secondary: var(
-    --border,
-    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
-  );
-
-  margin: 0;
-  padding: var(--visualize-paint-gutter, 0px);
-  color: var(--foreground);
-  background: transparent !important;
-  font-family: var(--font-sans) !important;
-  -webkit-font-smoothing: antialiased;
-  font-size: var(--font-size-base);
-  line-height: calc(var(--font-size-base) * 1.625);
-  font-weight: var(--font-weight-normal);
-}
-
-.cursor-interaction {
-  cursor: var(--cursor-interaction, pointer);
-}
-
-a {
-  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
-  cursor: var(--cursor-interaction, pointer);
-  text-decoration: none;
-  text-underline-offset: 2px;
-  font-weight: inherit;
-}
-
-a:is(:hover, :focus-visible) {
-  text-decoration-line: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 0.5px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-block: 0;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-.table {
-  font-family: var(--font-sans);
-}
-
-h1 {
-  font-size: calc(var(--font-size-base) * 1.5);
-  line-height: 1.3333333333;
-}
-
-h2 {
-  font-size: calc(var(--font-size-base) * 1.25);
-  line-height: 1.4;
-}
-h3 {
-  font-size: calc(var(--font-size-base) * 1.125);
-  line-height: 1.5555555556;
-}
-h4 {
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-}
-h5,
-h6 {
-  font-size: var(--font-size-base);
-  line-height: calc(var(--font-size-base) * 1.625);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-b,
-strong,
-th {
-  font-weight: 600;
-}
-
-code:not(pre code) {
-  display: inline;
-  padding: 1px 6px;
-  border-radius: var(--radius-sm);
-  corner-shape: var(--corner-shape);
-  background: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  overflow-wrap: anywhere;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  word-break: break-word;
-}
-pre,
-pre code {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 20px;
-}
-
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-
-.table {
-  width: 100%;
-  color: var(--foreground);
-  font: inherit;
-  text-align: start;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: calc(var(--font-size-base) * 0.875);
-  line-height: calc(var(--font-size-base) * 1.625);
-  font-family: var(--font-sans);
-}
-
-.table :is(th, td) {
-  padding-block: 10px;
-  padding-inline: 0 24px;
-  overflow-wrap: anywhere;
-  border-bottom: 1px solid var(--border);
-  text-align: start;
-  vertical-align: top;
-  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
-}
-.table :is(th, td):not(:last-child) {
-  padding-inline-end: calc(var(--font-size-base) * 1.5);
-}
-
-.table-responsive &gt; .table :is(th, td) {
-  overflow-wrap: break-word;
-}
-
-.table :is(th, td):last-child {
-  padding-inline-end: 0;
-}
-
-.table :is(caption, thead th) {
-  font-weight: 600;
-}
-
-.table thead :is(th, td) {
-  border-bottom-color: var(--border-strong, var(--input));
-  padding-block: calc(var(--font-size-base) / 2);
-  line-height: var(--font-size-base);
-}
-
-.table tbody tr:last-child :is(th, td) {
-  border-bottom: 0;
-}
-.table tbody :is(th, td) {
-  padding-block: calc(var(--font-size-base) * 0.625);
-}
-
-.table.table-sm :is(th, td) {
-  padding-block: 8px;
-}
-
-.table.table-sm :is(th, td):not(:last-child) {
-  padding-inline-end: 16px;
-}
-
-.table :is(.text-end, [align=&quot;right&quot;]) {
-  text-align: end;
-  font-variant-numeric: tabular-nums;
-}
-
-.table :is(.text-center, [align=&quot;center&quot;]) {
-  text-align: center;
-}
-
-.table .text-nowrap {
-  white-space: nowrap;
-}
-
-#widget {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  padding: 0;
-  background: transparent !important;
-}
-
-.card {
-  min-width: 0;
-  padding: 12px;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  border-radius: var(--radius-2xl);
-  corner-shape: var(--corner-shape);
-  color: var(--card-foreground);
-  background: var(--card);
-}
-
-.widget {
-  min-width: 0;
-  overflow: hidden;
-  border: 0;
-  border-radius: var(--radius-lg);
-  corner-shape: var(--corner-shape);
-  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
-  color: var(--foreground);
-  background: var(--background);
-}
-
-#widget &gt; :not(.card, .widget, .progress) {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.tooltip {
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  width: max-content;
-  max-width: min(
-    20rem,
-    var(--tooltip-available-width, calc(100vw - 10px)),
-    calc(100vw - 10px)
-  );
-  max-height: min(
-    var(--tooltip-available-height, calc(100vh - 10px)),
-    calc(100vh - 10px)
-  );
-  border: 1px solid var(--border);
-  corner-shape: var(--corner-shape);
-  overflow-wrap: break-word;
-  white-space: normal;
-  pointer-events: none;
-  user-select: none;
-  font-family: var(--font-sans);
-  padding: 5px 12px;
-  border-color: color-mix(
-    in oklab,
-    light-dark(var(--primary-foreground), var(--foreground)) 5%,
-    transparent
-  );
-  border-radius: var(--radius-2xl);
-  color: light-dark(var(--primary-foreground), var(--foreground));
-  background: light-dark(var(--foreground), var(--popover));
-  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
-  letter-spacing: -0.15px;
-  font-size: calc(var(--font-size-base) * 14 / 16);
-  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
-  font-weight: 600;
-  line-height: 18px;
-  text-align: center;
-}
-
-.viz-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
-  gap: 10px;
-}
-
-.viz-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.viz-stat-value {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-.viz-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-hr {
-  width: 100%;
-  height: 1px;
-  margin-block: 6px;
-  border: 0;
-  background: var(--border);
-}
-
-.nav {
-  display: flex;
-  min-width: 0;
-  align-items: center;
-  gap: 4px;
-}
-
-.progress {
-  display: flex;
-  height: 8px;
-  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
-  overflow: hidden;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--muted);
-}
-
-.progress-bar:only-child {
-  border-radius: var(--radius-full);
-}
-
-.progress-bar {
-  height: 100%;
-  flex-shrink: 0;
-  border: 0;
-  background: var(--viz-series-1);
-}
-
-.viz-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
-  background: color-mix(in srgb, var(--foreground) 5%, transparent);
-  font-family: var(--font-sans);
-  font-size: calc(var(--font-size-base) * 14 / 16);
-  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
-  font-weight: var(--font-weight-normal);
-  line-height: 1;
-}
-
-small,
-.text-small {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
-}
-
-.text-muted {
-  color: var(--muted-foreground);
-}
-
-.tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.viz-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.viz-controls &gt; .form-label {
-  display: grid;
-  min-width: min(100%, 260px);
-  flex: 1 1 280px;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 2px 12px;
-  margin-bottom: 0;
-}
-
-.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
-  grid-column: 1 / -1;
-}
-
-.btn,
-.nav-link,
-.form-check-input,
-.form-control,
-.form-range,
-.form-select {
-  font: inherit;
-}
-
-/* Match inline alignment without overriding a containing flex or grid layout. */
-.btn,
-.nav-link,
-.form-control,
-.form-select,
-.form-range,
-.form-check {
-  vertical-align: middle;
-}
-
-.btn,
-.nav-link {
-  appearance: button;
-  display: inline-flex;
-  inline-size: fit-content;
-  max-inline-size: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0 8px;
-  -webkit-app-region: no-drag;
-  border: 1px solid var(--input);
-  corner-shape: var(--corner-shape);
-  cursor: var(--cursor-interaction, pointer);
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  user-select: none;
-  -webkit-font-smoothing: inherit;
-  font-family: var(--font-sans);
-  height: fit-content;
-  min-height: calc(12px + 2 * var(--control-spacing, 12px));
-  padding-inline: var(--control-spacing, 12px);
-  border-color: transparent;
-  border-radius: var(--radius-full);
-  color: var(--foreground);
-  background: color-mix(in srgb, var(--foreground) 5%, transparent);
-  font-size: calc(var(--font-size-base) * 14 / 16);
-  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
-  font-weight: var(--font-weight-normal);
-  line-height: 18px;
-}
-
-.btn {
-  border-color: var(--border);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-}
-
-.btn:is(.btn-block, .viz-tile) {
-  inline-size: 100%;
-}
-
-.btn.viz-tile {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  white-space: normal;
-}
-
-a.btn {
-  cursor: var(--cursor-interaction, pointer);
-  text-decoration: none;
-}
-
-.btn:not(:disabled):hover {
-  background: light-dark(
-    color-mix(in srgb, var(--foreground) 5.5%, transparent),
-    color-mix(in srgb, var(--foreground) 8%, transparent)
-  );
-}
-
-.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
-  background: color-mix(in srgb, var(--foreground) 10%, transparent);
-}
-
-.btn-primary {
-  border-color: var(--border);
-  color: var(--primary-foreground);
-  background: var(--foreground);
-  background-clip: border-box;
-}
-
-.btn-primary .text-muted {
-  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
-}
-
-.btn-primary:not(:disabled):hover {
-  background: color-mix(in srgb, var(--foreground) 80%, transparent);
-  background-clip: border-box;
-}
-
-.btn-ghost {
-  border-color: transparent;
-  color: var(--muted-foreground);
-  background: transparent;
-}
-
-.btn-ghost:not(:disabled):hover {
-  color: var(--muted-foreground);
-  background: light-dark(
-    color-mix(in srgb, var(--foreground) 5.5%, transparent),
-    color-mix(in srgb, var(--foreground) 8%, transparent)
-  );
-}
-
-.nav-pills .nav-link {
-  min-width: 0;
-  border-color: transparent;
-  color: var(--muted-foreground);
-  background: transparent;
-}
-
-.nav-justified .nav-link {
-  flex: 1 1 0;
-  overflow-wrap: anywhere;
-  white-space: normal;
-}
-
-.nav-pills .nav-link.active {
-  color: var(--foreground);
-  background: var(--muted);
-}
-
-/* Shared preview chrome; product styles stay inside each variant. */
-.viz-dotted-background {
-  background-image: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
-    transparent 0.8px
-  );
-  background-position: center;
-  background-size: 16px 16px;
-}
-
-.viz-carousel {
-  position: relative;
-  min-width: 0;
-}
-
-.viz-carousel:has(&gt; .viz-carousel-controls) {
-  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
-  padding-bottom: 60px;
-}
-
-.viz-carousel &gt; [data-variant][hidden] {
-  display: none !important;
-}
-
-.viz-carousel &gt; [data-variant] {
-  isolation: isolate;
-}
-
-.viz-carousel-controls {
-  --viz-carousel-hover: light-dark(
-    color-mix(in srgb, var(--foreground) 5.4%, transparent),
-    color-mix(in srgb, var(--foreground) 7.8%, transparent)
-  );
-  position: absolute;
-  z-index: 2;
-  bottom: 8px;
-  left: 50%;
-  display: flex;
-  width: max-content;
-  /* Leave room for the host&#x27;s design-controls launcher at the trailing edge. */
-  max-width: calc(100% - 96px);
-  align-items: center;
-  gap: 0;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-sans);
-  /* Match the settings dropdown chrome independently of the content font size. */
-  font-size: 13px;
-  font-weight: var(--font-weight-normal);
-  line-height: 18px;
-  transform: translateX(-50%);
-  user-select: none;
-}
-
-/* Keep authored mockup button styles out of the shared carousel chrome. */
-.viz-carousel-controls button,
-.viz-carousel-picker &gt; summary {
-  display: flex !important;
-  height: auto !important;
-  min-height: 30px;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 4px;
-  padding: 0 6px !important;
-  -webkit-app-region: no-drag;
-  border: 0 !important;
-  border-radius: 14px !important;
-  color: inherit !important;
-  background: transparent !important;
-  font: inherit !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.viz-carousel-controls &gt; button,
-.viz-carousel-picker &gt; summary {
-  position: relative;
-  isolation: isolate;
-}
-
-.viz-carousel-controls &gt; button {
-  --icon-size: 16px;
-  width: 30px !important;
-  padding: 0 !important;
-}
-
-.viz-carousel-picker &gt; summary {
-  padding-inline: 12px !important;
-}
-
-.viz-carousel-controls .viz-carousel-caret {
-  width: 14px;
-  height: 14px;
-  flex: none;
-  margin: 0;
-  color: inherit;
-  transform: rotate(180deg);
-}
-
-.viz-carousel-controls &gt; button &gt; svg,
-.viz-carousel-controls .viz-carousel-caret,
-.viz-carousel-count {
-  opacity: 0.5;
-}
-
-.viz-carousel-controls &gt; button::before,
-.viz-carousel-picker &gt; summary::before {
-  position: absolute;
-  z-index: -1;
-  inset: 3px;
-  border-radius: 12px;
-  content: &quot;&quot;;
-  pointer-events: none;
-}
-
-.viz-carousel-controls &gt; button:hover::before,
-.viz-carousel-picker &gt; summary:hover::before {
-  background: var(--viz-carousel-hover);
-}
-
-.viz-carousel-controls &gt; button,
-.viz-carousel-controls [data-lucide],
-.viz-carousel-controls .lucide {
-  flex-shrink: 0;
-}
-
-.viz-carousel-picker {
-  min-width: 0;
-}
-
-.viz-carousel-picker &gt; summary {
-  min-width: 0;
-  list-style: none;
-}
-
-.viz-carousel-picker &gt; summary::-webkit-details-marker {
-  display: none;
-}
-
-.viz-carousel-count {
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-
-.viz-carousel-name {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.viz-carousel-options {
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + 4px);
-  left: 0;
-  display: flex;
-  max-height: 240px;
-  flex-direction: column;
-  gap: 2px;
-  overflow: auto;
-  padding: 4px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--background);
-  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
-}
-
-.viz-carousel-options &gt; button {
-  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
-  width: 100% !important;
-  min-height: 28px;
-  justify-content: flex-start !important;
-  padding: 4px 8px !important;
-  font-size: var(--font-size-small) !important;
-  text-align: start;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-.viz-carousel-options &gt; [aria-current=&quot;true&quot;],
-.viz-carousel-options &gt; button:hover {
-  background: var(--viz-carousel-hover) !important;
-}
-
-.btn:disabled,
-.nav-link:disabled,
-.nav-link[aria-disabled=&quot;true&quot;] {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-[data-lucide] {
-  stroke-width: 1.6;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--foreground);
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  padding: 0 8px;
-  outline: none;
-  border: 1px solid var(--input);
-  corner-shape: var(--corner-shape);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  height: calc(12px + 2 * var(--control-spacing, 12px));
-  min-height: calc(12px + 2 * var(--control-spacing, 12px));
-  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
-  border-color: var(--input);
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--popover) 96%, transparent);
-  font-size: calc(var(--font-size-base) * 14 / 16);
-  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
-  font-weight: var(--font-weight-normal);
-  line-height: 1.4285714286;
-}
-.form-control:is(
-  [type=&quot;file&quot;],
-  [type=&quot;date&quot;],
-  [type=&quot;datetime-local&quot;],
-  [type=&quot;month&quot;],
-  [type=&quot;week&quot;],
-  [type=&quot;color&quot;]
-) {
-  height: calc(12px + 2 * var(--control-spacing, 12px));
-  min-height: calc(12px + 2 * var(--control-spacing, 12px));
-  line-height: 18px;
-}
-.form-control:is(
-  [type=&quot;date&quot;],
-  [type=&quot;datetime-local&quot;],
-  [type=&quot;month&quot;],
-  [type=&quot;week&quot;]
-) {
-  padding-inline: var(--control-spacing, 12px);
-}
-
-.form-control::placeholder {
-  color: var(--muted-foreground);
-}
-
-.form-control[type=&quot;file&quot;] {
-  overflow: hidden;
-  cursor: var(--cursor-interaction, pointer);
-  padding: 0;
-}
-
-.form-control[type=&quot;file&quot;]::file-selector-button {
-  padding: 0 8px;
-  border: 0;
-  border-right: 1px solid var(--input);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-  cursor: inherit;
-  font: inherit;
-  min-height: calc(10px + 2 * var(--control-spacing, 12px));
-  padding-inline: var(--control-spacing, 12px);
-  margin-inline-end: var(--control-spacing, 12px);
-}
-
-.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.form-control-color[type=&quot;color&quot;] {
-  width: 40px;
-  height: calc(12px + 2 * var(--control-spacing, 12px));
-  padding: 3px;
-  cursor: var(--cursor-interaction, pointer);
-}
-
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
-  border: 0;
-  border-radius: calc(var(--radius-lg) - 4px);
-  corner-shape: var(--corner-shape);
-}
-
-textarea.form-control {
-  height: auto;
-  resize: vertical;
-  min-height: 96px;
-  padding: 8px 10px;
-}
-
-.form-control:focus-visible {
-  border-color: var(--ring);
-  box-shadow: none;
-}
-.form-control:disabled {
-  color: var(--muted-foreground);
-  background: color-mix(in srgb, var(--foreground) 5%, transparent);
-  opacity: 1;
-}
-.form-control[aria-invalid=&quot;true&quot;] {
-  border-color: var(--red);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
-}
-
-.form-control:disabled,
-.form-select:disabled {
-  cursor: not-allowed;
-}
-
-.form-select {
-  appearance: none;
-  display: block;
-  width: 100%;
-  height: fit-content;
-  min-height: calc(12px + 2 * var(--control-spacing, 12px));
-  margin: 0;
-  /* The secondary icon role is 14px at compact density and 16px at web density. */
-  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
-  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
-  padding: 0 calc(16px + var(--icon-size)) 0 12px;
-  outline: none;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  corner-shape: var(--corner-shape);
-  color: var(--foreground);
-  background-color: var(--secondary);
-  background-image:
-    linear-gradient(
-      45deg,
-      transparent calc(50% - 0.6px),
-      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
-      transparent calc(50% + 0.6px)
-    ),
-    linear-gradient(
-      135deg,
-      transparent calc(50% - 0.6px),
-      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
-      transparent calc(50% + 0.6px)
-    );
-  background-position:
-    calc(100% - 12px - var(--icon-size) / 2) 50%,
-    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
-  background-repeat: no-repeat;
-  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
-  cursor: var(--cursor-interaction, default);
-  font-size: calc(var(--font-size-base) * 14 / 16);
-  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
-  font-weight: var(--font-weight-normal);
-  line-height: 18px;
-}
-
-.form-select option {
-  color: var(--popover-foreground);
-  background-color: var(--popover);
-}
-
-.form-select:not(:disabled):hover {
-  background-color: light-dark(
-    color-mix(in srgb, var(--foreground) 5.5%, transparent),
-    color-mix(in srgb, var(--foreground) 8%, transparent)
-  );
-}
-
-.form-select:focus-visible {
-  box-shadow: 0 0 0 2px var(--ring);
-}
-.form-select:disabled {
-  opacity: 0.4;
-}
-
-.form-check {
-  display: flex;
-  min-height: calc(12px + 2 * var(--control-spacing, 12px));
-  align-items: center;
-  gap: 6px;
-}
-
-.form-check-input {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 auto;
-  margin: 0;
-  border: 1px solid var(--input);
-  color: var(--primary-foreground);
-  background-color: transparent;
-  cursor: var(--cursor-interaction, default);
-  transition:
-    background-color 150ms,
-    border-color 150ms,
-    box-shadow 150ms;
-}
-
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
-  corner-shape: round;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  width: calc(10px + var(--control-spacing, 12px) / 2);
-  height: calc(10px + var(--control-spacing, 12px) / 2);
-  border-color: var(--border-strong, var(--input));
-  border-radius: calc(var(--radius-sm) / 2);
-  background-color: transparent;
-  color: var(--foreground);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input:not(:disabled):not(:checked):hover {
-  background-color: var(--card);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:is(:checked, :indeterminate) {
-  border-color: var(--border-strong, var(--input));
-  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-foreground);
-  content: &quot;&quot;;
-  mask: var(--checkmark-image) center / 12px 12px no-repeat;
-  background-color: var(--foreground);
-}
-.form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:indeterminate::before {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 65%;
-  height: 6.65%;
-  margin: auto;
-  border-radius: var(--radius-full);
-  background: var(--foreground);
-  mask: none;
-  content: &quot;&quot;;
-}
-
-.form-check-input[type=&quot;radio&quot;] {
-  border-radius: var(--radius-full);
-  width: 16px;
-  height: 16px;
-  border: 0;
-  box-shadow: inset 0 0 0 1px var(--input);
-}
-
-.form-check-input[type=&quot;radio&quot;]:checked {
-  border: 0;
-  background: radial-gradient(
-    circle,
-    var(--primary-foreground) 0 3px,
-    var(--foreground) 3px
-  );
-  box-shadow: none;
-}
-
-.form-check:not(.form-switch) .form-check-input:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:focus-visible {
-  border-color: var(--ring);
-  outline: none;
-  box-shadow: 0 0 0 2px var(--ring);
-}
-
-.form-check:not(.form-switch) .form-check-input:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
-  cursor: not-allowed;
-}
-.form-check:not(.form-switch) .form-check-input[type=&quot;radio&quot;]:disabled,
-.form-check:not(.form-switch)
-  .form-check-input[type=&quot;radio&quot;]:disabled
-  + .form-check-label {
-  opacity: 0.5;
-}
-
-.form-switch .form-check-input:disabled,
-.form-switch .form-check-input:disabled + .form-check-label {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.form-check-label {
-  color: var(--foreground);
-  cursor: var(--cursor-interaction, default);
-}
-
-.form-switch .form-check-input {
-  position: relative;
-  width: 32px;
-  height: 20px;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--muted);
-  box-shadow: none;
-  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.form-switch .form-check-input::before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  box-sizing: border-box;
-  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-sm);
-  content: &quot;&quot;;
-  transform: translate(2px, -50%);
-  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
-  border-color: #fff;
-  background: #fff;
-}
-
-.form-switch .form-check-input:checked {
-  background: var(--blue);
-}
-
-.form-switch .form-check-input:checked::before {
-  transform: translate(14px, -50%);
-}
-
-.form-switch .form-check-input:focus-visible {
-  box-shadow: 0 0 0 2px var(--ring);
-  outline: none;
-}
-
-.form-range {
-  appearance: none;
-  display: block;
-  width: 100%;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  accent-color: var(--primary);
-  height: calc(12px + 2 * var(--control-spacing, 12px));
-  min-height: calc(12px + 2 * var(--control-spacing, 12px));
-  outline: none;
-  border-radius: var(--radius-full);
-  color: var(--foreground);
-  background: transparent;
-}
-
-.form-range::-webkit-slider-runnable-track {
-  background: var(--form-range-track, var(--border));
-  height: 2px;
-  border-radius: var(--radius-full);
-}
-
-.form-range::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  margin-top: -9px;
-  border-color: transparent;
-  background: currentColor;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Outline the native track and thumb, preserving the larger input hit area. */
-.form-range:focus-visible::-webkit-slider-runnable-track {
-  outline: 2px auto Highlight;
-  outline-color: -webkit-focus-ring-color;
-}
-
-.form-range::-moz-range-track {
-  background: var(--form-range-track, var(--border));
-  height: 2px;
-  border-radius: var(--radius-full);
-}
-
-.form-range::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  border-color: transparent;
-  background: currentColor;
-  box-shadow: var(--shadow-sm);
-}
-
-.form-range:focus-visible::-moz-range-thumb {
-  outline: 2px solid Highlight;
-  outline-offset: 2px;
-}
-
-.form-range:disabled {
-  opacity: 1;
-  cursor: default;
-}
-
-.btn:not(.btn-primary, .viz-tile):is(
-  [aria-pressed=&quot;true&quot;],
-  [aria-selected=&quot;true&quot;],
-  .is-selected
-) {
-  border-color: transparent;
-  color: var(--primary-foreground);
-  background: var(--blue);
-}
-
-.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
-  border-color: var(--primary);
-  box-shadow: inset 0 0 0 1px var(--primary);
-}
-
-.btn:focus-visible,
-.nav-link:focus-visible {
-  outline-offset: 2px;
-  outline: none;
-  box-shadow: 0 0 0 2px var(--ring);
-}
-
-.viz-carousel-controls :is(button, summary):focus-visible {
-  outline: 2px solid var(--ring) !important;
-  outline-offset: 2px !important;
-}
-
-/* Web recipes are the default, including on renderers without inline style queries. */
-@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
-  /* Match the host&#x27;s proportional text-sm scale at every text preference. */
-  .tooltip,
-  .viz-badge,
-  .btn,
-  .nav-link,
-  .form-control,
-  .form-select {
-    font-size: if(
-      style(--corner-shape: round): round(
-          nearest,
-          calc(var(--font-size-base) * 14 / 16),
-          1px
-        );
-        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
-    );
-  }
-
-  .btn,
-  .nav-link,
-  .form-select {
-    border-radius: if(
-      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
-    );
-  }
-
-  .form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
-    border-radius: if(
-      style(--corner-shape: round): calc(var(--radius-sm) / 2);
-        else: calc(var(--radius-lg) * 0.4)
-    );
-  }
-
-  .tooltip {
-    font-weight: if(
-      style(--corner-shape: round): 600; else: var(--font-weight-normal)
-    );
-  }
-}
-
-@media (pointer: coarse) {
-  .viz-carousel:has(&gt; .viz-carousel-controls) {
-    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
-    padding-bottom: 76px;
-  }
-
-  .btn,
-  .nav-link,
-  .viz-carousel-controls button,
-  .viz-carousel-picker &gt; summary,
-  .form-control,
-  .form-select {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  /* Keep small-screen WebKit from zooming when a text field receives focus. */
-  .form-control,
-  .form-select {
-    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
-    font-size: max(
-      16px,
-      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
-    );
-  }
-  .form-control:is(
-    [type=&quot;file&quot;],
-    [type=&quot;date&quot;],
-    [type=&quot;datetime-local&quot;],
-    [type=&quot;month&quot;],
-    [type=&quot;week&quot;],
-    [type=&quot;time&quot;],
-    [type=&quot;color&quot;]
-  ) {
-    height: 44px;
-    min-height: 44px;
-    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
-    font-size: max(
-      16px,
-      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
-    );
-  }
-
-  .form-control[type=&quot;file&quot;]::file-selector-button {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  .form-control-color[type=&quot;color&quot;] {
-    width: 44px;
-    height: 44px;
-  }
-
-  .form-control:is(
-    [type=&quot;date&quot;],
-    [type=&quot;datetime-local&quot;],
-    [type=&quot;month&quot;],
-    [type=&quot;time&quot;],
-    [type=&quot;week&quot;]
-  ) {
-    min-width: 0;
-    max-width: 100%;
-    padding-block: 8px;
-  }
-
-  .form-check {
-    min-height: 44px;
-    padding-inline: 15px;
-  }
-
-  .form-check-input {
-    position: relative;
-  }
-
-  .form-check-input::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 44px;
-    height: 44px;
-    content: &quot;&quot;;
-    transform: translate(-50%, -50%);
-  }
-
-  .form-check-label {
-    display: inline-flex;
-    min-width: 44px;
-    min-height: 44px;
-    align-items: center;
-  }
-
-  .form-range {
-    height: 44px;
-    touch-action: pan-y;
-  }
-}
-
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-#widget &gt; svg {
-  width: 100%;
-}
-
-/* Model-authored chart rules can otherwise stretch icons after these styles load. */
-svg.lucide {
-  display: block;
-  width: var(--icon-size) !important;
-  height: var(--icon-size) !important;
-  flex: none;
-  margin: 0 !important;
-  stroke-width: 1.6;
-}
-
-.text-warning,
-.text-destructive {
-  color: var(--destructive);
-}
-
-html&gt;body{padding:0}&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
-&lt;script&gt;(() =&gt; {
-  const root = document.documentElement;
-  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
-  const apply = Reflect.apply;
-  const isArray = Array.isArray;
-  const hasOwn = Object.hasOwn;
-  const parentWindow = globalThis.parent;
-  const stringify = JSON.stringify;
-  const parse = JSON.parse;
-  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
-  const initialStateElement = document.getElementById(
-    &quot;codex-visualization-widget-state&quot;,
-  );
-  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
-  initialStateElement?.remove();
-  /** @type {Record&lt;string, unknown&gt; | null} */
-  let state = initialGlobals.widgetState ?? null;
-  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
-  let nextStateRequestId = 0;
-  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
-  const pendingStateWrites = new Map();
-  const persistenceError = () =&gt;
-    Object.assign(
-      new Error(&quot;The host could not persist the widget state update&quot;),
-      {
-        code: -32000,
-        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
-      },
-    );
-  /**
-   * @param {object} prototype
-   * @param {string} property
-   */
-  const getPrototypeGetter = (prototype, property) =&gt; {
-    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
-    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
-    if (getter == null) {
-      throw new Error(`Missing ${property} getter`);
-    }
-    return getter;
-  };
-  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
-  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
-  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const addHostMessageListener = MessagePort.prototype.addEventListener;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const postHostMessage = MessagePort.prototype.postMessage;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const startHostPort = MessagePort.prototype.start;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
-  /** @type {MessagePort | null} */
-  let hostPort = null;
-  const postToHost = (type, payload) =&gt; {
-    if (hostPort != null) {
-      apply(postHostMessage, hostPort, [{ type, ...payload }]);
-    }
-  };
-  const openExternal = ({ href }) =&gt; {
-    if (globalThis.navigator.userActivation?.isActive === true) {
-      postToHost(&quot;open-external&quot;, { href });
-    }
-  };
-  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
-    if (globalThis.navigator.userActivation?.isActive === true) {
-      postToHost(&quot;follow-up&quot;, { context, prompt, title });
-    }
-    return Promise.resolve();
-  };
-  /**
-   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
-   * @returns {Promise&lt;void&gt;}
-   */
-  const setWidgetState = async (next) =&gt; {
-    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
-    if (
-      nextState == null ||
-      typeof nextState !== &quot;object&quot; ||
-      isArray(nextState)
-    ) {
-      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
-    }
-    const inputState = stringify(
-      nextState,
-      (_key, /** @type {unknown} */ value) =&gt; {
-        if (
-          typeof value === &quot;undefined&quot; ||
-          typeof value === &quot;function&quot; ||
-          typeof value === &quot;symbol&quot; ||
-          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
-        ) {
-          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
-        }
-        return value;
-      },
-    );
-    const parsedState = parse(inputState);
-    if (
-      parsedState == null ||
-      typeof parsedState !== &quot;object&quot; ||
-      isArray(parsedState)
-    ) {
-      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
-    }
-    const storedState = {
-      modelContent: null,
-      privateContent: null,
-      ...parsedState,
-    };
-    const serializedState = stringify(storedState);
-    if (encode(serializedState).length &gt; 16 * 1024) {
-      throw new TypeError(
-        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
-      );
-    }
-    if (
-      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
-      (!isArray(storedState.imageIds) ||
-        storedState.imageIds.some(
-          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
-        ))
-    ) {
-      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
-    }
-    if (storedState.imageIds?.length &gt; 0) {
-      throw Object.assign(
-        new TypeError(&quot;Visualization state does not support image attachments&quot;),
-        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
-      );
-    }
-    state = storedState;
-    globalThis.openai.widgetState = state;
-    globalThis.dispatchEvent(
-      new CustomEvent(&quot;openai:set_globals&quot;, {
-        detail: { globals: { widgetState: state } },
-      }),
-    );
-    if (statePersistence === &quot;none&quot;) {
-      throw persistenceError();
-    }
-    const id = ++nextStateRequestId;
-    return new Promise((resolve, reject) =&gt; {
-      const timeout = globalThis.setTimeout(() =&gt; {
-        pendingStateWrites.delete(id);
-        reject(persistenceError());
-      }, 30_000);
-      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
-      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
-    });
-  };
-  const syncTheme = () =&gt; {
-    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
-    root.dataset.theme = theme;
-    globalThis.openai = {
-      ...globalThis.openai,
-      openExternal,
-      sendFollowUpMessage,
-      setWidgetState,
-      theme,
-      visualizationStyleVariables: {},
-      visualizationTheme: theme,
-      widgetState: state,
-      statePersistence,
-      stateModelContext: &quot;none&quot;,
-    };
-    globalThis.dispatchEvent(
-      new CustomEvent(&quot;openai:set_globals&quot;, {
-        detail: { globals: globalThis.openai },
-      }),
-    );
-  };
-  const sendHeight = () =&gt; {
-    postToHost(&quot;height&quot;, {
-      height: Math.ceil(
-        Math.max(
-          document.body.scrollHeight,
-          document.body.getBoundingClientRect().height,
-        ),
-      ),
-    });
-  };
-
-  globalThis.addEventListener(
-    &quot;message&quot;,
-    (event) =&gt; {
-      const data = apply(getMessageData, event, []);
-      const ports = apply(getMessagePorts, event, []);
-      const source = apply(getMessageSource, event, []);
-      if (
-        hostPort != null ||
-        source !== parentWindow ||
-        typeof data !== &quot;object&quot; ||
-        data?.type !== &quot;codex-visualization-initialize&quot; ||
-        !isArray(ports) ||
-        ports.length !== 1
-      ) {
-        return;
-      }
-      apply(stopMessagePropagation, event, []);
-      const nextHostPort = ports[0];
-      try {
-        apply(addHostMessageListener, nextHostPort, [
-          &quot;message&quot;,
-          (event) =&gt; {
-            const data = apply(getMessageData, event, []);
-            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
-              sendHeight();
-            } else if (
-              typeof data === &quot;object&quot; &amp;&amp;
-              data?.type === &quot;widget-state-result&quot;
-            ) {
-              /** @type {unknown} */
-              const id = data.id;
-              if (typeof id !== &quot;number&quot;) {
-                return;
-              }
-              const pending = pendingStateWrites.get(id);
-              if (pending != null) {
-                pendingStateWrites.delete(id);
-                globalThis.clearTimeout(pending.timeout);
-                if (data.ok === true) {
-                  pending.resolve();
-                } else {
-                  pending.reject(persistenceError());
-                }
-              }
-            }
-          },
-        ]);
-        apply(startHostPort, nextHostPort, []);
-      } catch {
-        return;
-      }
-      hostPort = nextHostPort;
-      for (const [id, { serializedState }] of pendingStateWrites) {
-        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
-      }
-      sendHeight();
-    },
-    { capture: true },
-  );
-  document.currentScript?.remove();
-  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
-  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
-    if (event.defaultPrevented) {
-      return;
-    }
-    let element = null;
-    if (event.target instanceof globalThis.Element) {
-      element = event.target;
-    } else if (event.target instanceof globalThis.Node) {
-      element = event.target.parentElement;
-    }
-    const link = element?.closest(&quot;a[href]&quot;);
-    const href = link?.getAttribute(&quot;href&quot;);
-    if (href == null) {
-      return;
-    }
-    if (href.startsWith(&quot;#&quot;)) {
-      let id;
-      try {
-        id = decodeURIComponent(href.slice(1));
-      } catch {
-        return;
-      }
-      const target = id.length === 0 ? root : document.getElementById(id);
-      if (
-        target == null ||
-        globalThis.navigator.userActivation?.isActive !== true
-      ) {
-        return;
-      }
-      event.preventDefault();
-      postToHost(&quot;scroll-to&quot;, {
-        top: target.getBoundingClientRect().top + globalThis.scrollY,
-      });
-      return;
-    }
-    event.preventDefault();
-    openExternal({ href });
-  });
-  new ResizeObserver(sendHeight).observe(document.body);
-  syncTheme();
-})();
-&lt;/script&gt;
-&lt;div id=&quot;couple-life-prototype&quot;&gt;
-  &lt;style&gt;
+<div id="couple-life-prototype">
+  <style>
     #couple-life-prototype {
       color-scheme: light dark;
       --cp-stage: light-dark(#efe9e0, #11100f);
@@ -1811,7 +44,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       width: 100%;
       max-width: 736px;
       margin: 0 auto;
-      font-family: &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans SC&quot;, sans-serif;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
       color: var(--cp-ink);
     }
 
@@ -1839,31 +72,32 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
 
     .cp-app i[data-lucide]:empty::before {
-      content: &quot;·&quot;;
+      content: "·";
     }
 
-    .cp-app i[data-lucide=&quot;users&quot;]:empty::before { content: &quot;∞&quot;; }
-    .cp-app i[data-lucide=&quot;sparkles&quot;]:empty::before { content: &quot;✦&quot;; }
-    .cp-app i[data-lucide=&quot;utensils&quot;]:empty::before { content: &quot;⌁&quot;; }
-    .cp-app i[data-lucide=&quot;map-pin&quot;]:empty::before { content: &quot;⌖&quot;; }
-    .cp-app i[data-lucide=&quot;dices&quot;]:empty::before { content: &quot;⚄&quot;; }
-    .cp-app i[data-lucide=&quot;chevron-right&quot;]:empty::before { content: &quot;›&quot;; }
-    .cp-app i[data-lucide=&quot;heart&quot;]:empty::before { content: &quot;♡&quot;; }
-    .cp-app i[data-lucide=&quot;plus&quot;]:empty::before { content: &quot;+&quot;; }
-    .cp-app i[data-lucide=&quot;flame&quot;]:empty::before { content: &quot;♨&quot;; }
-    .cp-app i[data-lucide=&quot;soup&quot;]:empty::before { content: &quot;◡&quot;; }
-    .cp-app i[data-lucide=&quot;croissant&quot;]:empty::before { content: &quot;◒&quot;; }
-    .cp-app i[data-lucide=&quot;image&quot;]:empty::before { content: &quot;▧&quot;; }
-    .cp-app i[data-lucide=&quot;sunset&quot;]:empty::before { content: &quot;◐&quot;; }
-    .cp-app i[data-lucide=&quot;sun&quot;]:empty::before { content: &quot;☼&quot;; }
-    .cp-app i[data-lucide=&quot;palette&quot;]:empty::before { content: &quot;✦&quot;; }
-    .cp-app i[data-lucide=&quot;trees&quot;]:empty::before { content: &quot;♣&quot;; }
-    .cp-app i[data-lucide=&quot;house&quot;]:empty::before { content: &quot;⌂&quot;; }
-    .cp-app i[data-lucide=&quot;map&quot;]:empty::before { content: &quot;⌖&quot;; }
-    .cp-app i[data-lucide=&quot;bookmark&quot;]:empty::before { content: &quot;▮&quot;; }
-    .cp-app i[data-lucide=&quot;x&quot;]:empty::before { content: &quot;×&quot;; }
-    .cp-app i[data-lucide=&quot;check&quot;]:empty::before { content: &quot;✓&quot;; }
-    .cp-app i[data-lucide=&quot;copy&quot;]:empty::before { content: &quot;⧉&quot;; }
+    .cp-app i[data-lucide="users"]:empty::before { content: "∞"; }
+    .cp-app i[data-lucide="sparkles"]:empty::before { content: "✦"; }
+    .cp-app i[data-lucide="utensils"]:empty::before { content: "⌁"; }
+    .cp-app i[data-lucide="map-pin"]:empty::before { content: "⌖"; }
+    .cp-app i[data-lucide="dices"]:empty::before { content: "⚄"; }
+    .cp-app i[data-lucide="chevron-right"]:empty::before { content: "›"; }
+    .cp-app i[data-lucide="heart"]:empty::before { content: "♡"; }
+    .cp-app i[data-lucide="plus"]:empty::before { content: "+"; }
+    .cp-app i[data-lucide="flame"]:empty::before { content: "♨"; }
+    .cp-app i[data-lucide="soup"]:empty::before { content: "◡"; }
+    .cp-app i[data-lucide="croissant"]:empty::before { content: "◒"; }
+    .cp-app i[data-lucide="image"]:empty::before { content: "▧"; }
+    .cp-app i[data-lucide="sunset"]:empty::before { content: "◐"; }
+    .cp-app i[data-lucide="sun"]:empty::before { content: "☼"; }
+    .cp-app i[data-lucide="palette"]:empty::before { content: "✦"; }
+    .cp-app i[data-lucide="trees"]:empty::before { content: "♣"; }
+    .cp-app i[data-lucide="house"]:empty::before { content: "⌂"; }
+    .cp-app i[data-lucide="map"]:empty::before { content: "⌖"; }
+    .cp-app i[data-lucide="bookmark"]:empty::before { content: "▮"; }
+    .cp-app i[data-lucide="x"]:empty::before { content: "×"; }
+    .cp-app i[data-lucide="check"]:empty::before { content: "✓"; }
+    .cp-app i[data-lucide="copy"]:empty::before { content: "⧉"; }
+    .cp-app i[data-lucide="vote"]:empty::before { content: "✓"; }
 
     .cp-stage {
       position: relative;
@@ -1883,7 +117,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 
     .cp-stage::before,
     .cp-stage::after {
-      content: &quot;&quot;;
+      content: "";
       position: absolute;
       z-index: 0;
       width: 82px;
@@ -2098,7 +332,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
 
     .cp-hero::after {
-      content: &quot;&quot;;
+      content: "";
       position: absolute;
       top: 20px;
       right: 18px;
@@ -2350,7 +584,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       cursor: pointer;
     }
 
-    .cp-filter[aria-pressed=&quot;true&quot;] {
+    .cp-filter[aria-pressed="true"] {
       border-color: transparent;
       background: var(--cp-ink);
       color: var(--cp-app);
@@ -2385,7 +619,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
 
     .cp-thumb::after {
-      content: &quot;&quot;;
+      content: "";
       position: absolute;
       right: -10px;
       bottom: -10px;
@@ -2483,6 +717,192 @@ html&gt;body{padding:0}&lt;/style&gt;
 
     .cp-save.is-saved svg {
       fill: currentColor;
+    }
+
+    .cp-vote-board {
+      margin-bottom: 12px;
+      padding: 13px;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, var(--cp-mint-soft), var(--cp-lilac-soft));
+    }
+
+    .cp-vote-board-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cp-vote-board-icon {
+      display: grid;
+      flex: 0 0 35px;
+      place-items: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 12px;
+      background: light-dark(rgba(255, 255, 255, 0.68), rgba(20, 18, 16, 0.6));
+      color: var(--cp-mint);
+    }
+
+    .cp-vote-board-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .cp-vote-board-copy {
+      display: grid;
+      flex: 1;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .cp-vote-board-copy strong {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .cp-vote-board-copy span {
+      overflow: hidden;
+      color: var(--cp-muted);
+      font-size: 9px;
+      line-height: 1.45;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .cp-vote-board-count {
+      flex: 0 0 auto;
+      color: var(--cp-ink);
+      font-size: 9px;
+      font-weight: 500;
+    }
+
+    .cp-vote-board-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+      padding-top: 9px;
+      border-top: 1px solid var(--cp-line);
+    }
+
+    .cp-voter-dots {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .cp-voter-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      min-height: 23px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background: light-dark(rgba(255, 255, 255, 0.58), rgba(20, 18, 16, 0.5));
+      color: var(--cp-muted);
+      font-size: 8px;
+      font-weight: 500;
+    }
+
+    .cp-voter-dot.has-votes {
+      color: var(--cp-ink);
+    }
+
+    .cp-vote-share {
+      min-height: 32px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--cp-ink);
+      color: var(--cp-app);
+      font-size: 9px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .cp-vote-share:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .cp-place-item {
+      grid-template-columns: 65px minmax(0, 1fr) 57px;
+    }
+
+    .cp-vote-btn {
+      display: grid;
+      place-items: center;
+      gap: 2px;
+      width: 52px;
+      min-height: 46px;
+      padding: 4px;
+      border: 1px solid var(--cp-line);
+      border-radius: 13px;
+      background: var(--cp-surface-soft);
+      color: var(--cp-ink);
+      font-size: 8px;
+      font-weight: 500;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .cp-vote-btn svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .cp-vote-btn.is-voted {
+      border-color: transparent;
+      background: var(--cp-mint);
+      color: var(--cp-app);
+    }
+
+    .cp-vote-btn:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    .cp-vote-marks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 5px;
+    }
+
+    .cp-vote-mark {
+      padding: 3px 6px;
+      border-radius: 6px;
+      background: var(--cp-mint-soft);
+      color: var(--cp-mint);
+      font-size: 8px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .cp-share-link {
+      width: 100%;
+      min-height: 44px;
+      padding: 8px 10px;
+      border: 1px solid var(--cp-line);
+      border-radius: 12px;
+      outline: 0;
+      background: var(--cp-surface-soft);
+      color: var(--cp-ink);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .cp-name-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .cp-name-grid .cp-field {
+      margin: 0;
     }
 
     .cp-primary {
@@ -2614,7 +1034,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
 
     .cp-timeline::before {
-      content: &quot;&quot;;
+      content: "";
       position: absolute;
       top: 12px;
       bottom: 12px;
@@ -2632,7 +1052,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
 
     .cp-memory::before {
-      content: &quot;&quot;;
+      content: "";
       position: absolute;
       top: 17px;
       left: -17px;
@@ -2709,7 +1129,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       stroke-width: 1.75;
     }
 
-    .cp-nav-btn[aria-current=&quot;page&quot;] {
+    .cp-nav-btn[aria-current="page"] {
       background: var(--cp-surface-soft);
       color: var(--cp-ink);
     }
@@ -2887,375 +1307,450 @@ html&gt;body{padding:0}&lt;/style&gt;
       .cp-hero h2 {
         font-size: 20px;
       }
+
+      .cp-vote-board-meta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .cp-vote-share {
+        width: 100%;
+      }
     }
-  &lt;/style&gt;
+  </style>
 
-  &lt;div class=&quot;cp-stage&quot;&gt;
-    &lt;div class=&quot;cp-app&quot;&gt;
-      &lt;div class=&quot;cp-status&quot; aria-hidden=&quot;true&quot;&gt;
-        &lt;span&gt;10:24&lt;/span&gt;
-        &lt;div class=&quot;cp-status-dots&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
-      &lt;/div&gt;
+  <div class="cp-stage">
+    <div class="cp-app">
+      <div class="cp-status" aria-hidden="true">
+        <span>10:24</span>
+        <div class="cp-status-dots"><span></span><span></span><span></span></div>
+      </div>
 
-      &lt;header class=&quot;cp-top&quot;&gt;
-        &lt;div class=&quot;cp-couple-lockup&quot;&gt;
-          &lt;div class=&quot;cp-avatar-stack&quot; aria-hidden=&quot;true&quot;&gt;
-            &lt;span class=&quot;cp-avatar one&quot;&gt;满&lt;/span&gt;
-            &lt;span class=&quot;cp-avatar two&quot;&gt;川&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;cp-couple-name&quot;&gt;
-            &lt;strong&gt;小满 &amp;amp; 阿川&lt;/strong&gt;
-            &lt;span&gt;&lt;i class=&quot;cp-online&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;两个人都在线&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;button class=&quot;cp-connect&quot; id=&quot;cp-open-couple&quot; type=&quot;button&quot; aria-label=&quot;查看情侣空间邀请码&quot;&gt;
-          &lt;i data-lucide=&quot;users&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-          已连接
-        &lt;/button&gt;
-      &lt;/header&gt;
+      <header class="cp-top">
+        <div class="cp-couple-lockup">
+          <div class="cp-avatar-stack" aria-hidden="true">
+            <span class="cp-avatar one" id="cp-avatar-one">满</span>
+            <span class="cp-avatar two" id="cp-avatar-two">川</span>
+          </div>
+          <div class="cp-couple-name">
+            <strong id="cp-display-names">小满 &amp; 阿川</strong>
+            <span><i class="cp-online" aria-hidden="true"></i>两个人都在线</span>
+          </div>
+        </div>
+        <button class="cp-connect" id="cp-open-couple" type="button" aria-label="修改情侣空间资料">
+          <i data-lucide="users" aria-hidden="true"></i>
+          资料
+        </button>
+      </header>
 
-      &lt;div class=&quot;cp-flash&quot; id=&quot;cp-flash&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; hidden&gt;&lt;/div&gt;
+      <div class="cp-flash" id="cp-flash" role="status" aria-live="polite" hidden></div>
 
-      &lt;main class=&quot;cp-main&quot;&gt;
-        &lt;section class=&quot;cp-screen&quot; data-screen=&quot;home&quot; aria-labelledby=&quot;cp-home-title&quot;&gt;
-          &lt;p class=&quot;cp-eyebrow&quot;&gt;10月25日 · 周日&lt;/p&gt;
-          &lt;h1 class=&quot;cp-title&quot; id=&quot;cp-home-title&quot;&gt;今天想做点什么？&lt;/h1&gt;
-          &lt;p class=&quot;cp-subtitle&quot;&gt;小决定交给 App，大决定你们一起。&lt;/p&gt;
+      <main class="cp-main">
+        <section class="cp-screen" data-screen="home" aria-labelledby="cp-home-title">
+          <p class="cp-eyebrow" id="cp-date-label">今天 · 适合一起决定</p>
+          <h1 class="cp-title" id="cp-home-title">今天想做点什么？</h1>
+          <p class="cp-subtitle">小决定交给 App，大决定你们一起。</p>
 
-          &lt;div class=&quot;cp-hero&quot;&gt;
-            &lt;div class=&quot;cp-hero-kicker&quot;&gt;
-              &lt;i data-lucide=&quot;sparkles&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+          <div class="cp-hero">
+            <div class="cp-hero-kicker">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
               今日份共同决定
-            &lt;/div&gt;
-            &lt;h2&gt;晚饭和周末，&lt;br&gt;这次别再纠结啦。&lt;/h2&gt;
-            &lt;div class=&quot;cp-choice-row&quot;&gt;
-              &lt;button class=&quot;cp-choice&quot; type=&quot;button&quot; data-go=&quot;eat&quot;&gt;
-                &lt;span&gt;今晚吃什么&lt;small&gt;一起点菜&lt;/small&gt;&lt;/span&gt;
-                &lt;i data-lucide=&quot;utensils&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-              &lt;button class=&quot;cp-choice&quot; type=&quot;button&quot; data-go=&quot;play&quot;&gt;
-                &lt;span&gt;周末去哪玩&lt;small&gt;挑个去处&lt;/small&gt;&lt;/span&gt;
-                &lt;i data-lucide=&quot;map-pin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+            </div>
+            <h2>晚饭和周末，<br>这次别再纠结啦。</h2>
+            <div class="cp-choice-row">
+              <button class="cp-choice" type="button" data-go="eat">
+                <span>今晚吃什么<small>一起点菜</small></span>
+                <i data-lucide="utensils" aria-hidden="true"></i>
+              </button>
+              <button class="cp-choice" type="button" data-go="play">
+                <span>周末去哪玩<small>挑个去处</small></span>
+                <i data-lucide="map-pin" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
 
-          &lt;div class=&quot;cp-section-head&quot;&gt;
-            &lt;h3&gt;不如今晚试试&lt;/h3&gt;
-            &lt;span&gt;你们的共同收藏&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;button class=&quot;cp-luck-card&quot; type=&quot;button&quot; id=&quot;cp-luck-home&quot;&gt;
-            &lt;span class=&quot;cp-luck-icon&quot;&gt;&lt;i data-lucide=&quot;dices&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-            &lt;span class=&quot;cp-luck-copy&quot;&gt;
-              &lt;strong&gt;把选择交给一点点运气&lt;/strong&gt;
-              &lt;span&gt;从共同清单里随机解锁一个今晚计划&lt;/span&gt;
-            &lt;/span&gt;
-            &lt;i class=&quot;cp-arrow&quot; data-lucide=&quot;chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-          &lt;/button&gt;
+          <div class="cp-section-head">
+            <h3>不如今晚试试</h3>
+            <span>你们的共同收藏</span>
+          </div>
+          <button class="cp-luck-card" type="button" id="cp-luck-home">
+            <span class="cp-luck-icon"><i data-lucide="dices" aria-hidden="true"></i></span>
+            <span class="cp-luck-copy">
+              <strong>把选择交给一点点运气</strong>
+              <span>从共同清单里随机解锁一个今晚计划</span>
+            </span>
+            <i class="cp-arrow" data-lucide="chevron-right" aria-hidden="true"></i>
+          </button>
 
-          &lt;div class=&quot;cp-small-note&quot;&gt;
-            &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+          <div class="cp-small-note">
+            <i data-lucide="heart" aria-hidden="true"></i>
             上次觉得不错的地方，下次会更常被推荐
-          &lt;/div&gt;
-        &lt;/section&gt;
+          </div>
+        </section>
 
-        &lt;section class=&quot;cp-screen&quot; data-screen=&quot;eat&quot; aria-labelledby=&quot;cp-eat-title&quot; hidden&gt;
-          &lt;div class=&quot;cp-screen-head&quot;&gt;
-            &lt;div&gt;
-              &lt;h1 class=&quot;cp-title&quot; id=&quot;cp-eat-title&quot;&gt;今天想吃什么？&lt;/h1&gt;
-              &lt;p class=&quot;cp-subtitle&quot;&gt;先各自心动，再一起拍板。&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;button class=&quot;cp-round-add&quot; id=&quot;cp-add-meal-toggle&quot; type=&quot;button&quot; aria-label=&quot;添加想吃的东西&quot;&gt;
-              &lt;i data-lucide=&quot;plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-            &lt;/button&gt;
-          &lt;/div&gt;
+        <section class="cp-screen" data-screen="eat" aria-labelledby="cp-eat-title" hidden>
+          <div class="cp-screen-head">
+            <div>
+              <h1 class="cp-title" id="cp-eat-title">今天想吃什么？</h1>
+              <p class="cp-subtitle">先各自心动，再一起拍板。</p>
+            </div>
+            <button class="cp-round-add" id="cp-add-meal-toggle" type="button" aria-label="添加想吃的东西">
+              <i data-lucide="plus" aria-hidden="true"></i>
+            </button>
+          </div>
 
-          &lt;div class=&quot;cp-partner-bubble&quot;&gt;
-            &lt;span class=&quot;cp-mini-avatar&quot;&gt;川&lt;/span&gt;
-            阿川说：“天气冷了，想吃点热乎的。”
-          &lt;/div&gt;
+          <div class="cp-partner-bubble">
+            <span class="cp-mini-avatar" id="cp-meal-avatar">川</span>
+            <span id="cp-meal-quote">阿川说：“天气冷了，想吃点热乎的。”</span>
+          </div>
 
-          &lt;form class=&quot;cp-form&quot; id=&quot;cp-meal-form&quot; hidden&gt;
-            &lt;h3&gt;添加一个共同心愿&lt;/h3&gt;
-            &lt;div class=&quot;cp-field&quot;&gt;
-              &lt;label for=&quot;cp-meal-name&quot;&gt;店名或菜名&lt;/label&gt;
-              &lt;input id=&quot;cp-meal-name&quot; name=&quot;name&quot; autocomplete=&quot;off&quot; placeholder=&quot;例如：巷口小面&quot; required&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-field&quot;&gt;
-              &lt;label for=&quot;cp-meal-type&quot;&gt;类型&lt;/label&gt;
-              &lt;select id=&quot;cp-meal-type&quot; name=&quot;type&quot;&gt;
-                &lt;option value=&quot;hotpot&quot;&gt;热乎乎&lt;/option&gt;
-                &lt;option value=&quot;japanese&quot;&gt;清淡系&lt;/option&gt;
-                &lt;option value=&quot;home&quot;&gt;家常味&lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-field&quot;&gt;
-              &lt;label for=&quot;cp-meal-detail&quot;&gt;地点与预算&lt;/label&gt;
-              &lt;input id=&quot;cp-meal-detail&quot; name=&quot;detail&quot; autocomplete=&quot;off&quot; placeholder=&quot;例如：楼下 · 人均 ¥60&quot; required&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-form-actions&quot;&gt;
-              &lt;button class=&quot;cp-secondary&quot; id=&quot;cp-meal-cancel&quot; type=&quot;button&quot;&gt;先不添加&lt;/button&gt;
-              &lt;button class=&quot;cp-primary&quot; id=&quot;cp-meal-save&quot; type=&quot;button&quot;&gt;放进清单&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/form&gt;
+          <form class="cp-form" id="cp-meal-form" hidden>
+            <h3>添加一个共同心愿</h3>
+            <div class="cp-field">
+              <label for="cp-meal-name">店名或菜名</label>
+              <input id="cp-meal-name" name="name" autocomplete="off" placeholder="例如：巷口小面" required>
+            </div>
+            <div class="cp-field">
+              <label for="cp-meal-type">类型</label>
+              <select id="cp-meal-type" name="type">
+                <option value="hotpot">热乎乎</option>
+                <option value="japanese">清淡系</option>
+                <option value="home">家常味</option>
+              </select>
+            </div>
+            <div class="cp-field">
+              <label for="cp-meal-detail">地点与预算</label>
+              <input id="cp-meal-detail" name="detail" autocomplete="off" placeholder="例如：楼下 · 人均 ¥60" required>
+            </div>
+            <div class="cp-form-actions">
+              <button class="cp-secondary" id="cp-meal-cancel" type="button">先不添加</button>
+              <button class="cp-primary" id="cp-meal-save" type="button">放进清单</button>
+            </div>
+          </form>
 
-          &lt;div class=&quot;cp-filters&quot; role=&quot;group&quot; aria-label=&quot;筛选想吃的类型&quot;&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-meal-filter=&quot;all&quot; aria-pressed=&quot;true&quot;&gt;全部&lt;/button&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-meal-filter=&quot;hotpot&quot; aria-pressed=&quot;false&quot;&gt;热乎乎&lt;/button&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-meal-filter=&quot;japanese&quot; aria-pressed=&quot;false&quot;&gt;清淡系&lt;/button&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-meal-filter=&quot;home&quot; aria-pressed=&quot;false&quot;&gt;家常味&lt;/button&gt;
-          &lt;/div&gt;
+          <div class="cp-filters" role="group" aria-label="筛选想吃的类型">
+            <button class="cp-filter" type="button" data-meal-filter="all" aria-pressed="true">全部</button>
+            <button class="cp-filter" type="button" data-meal-filter="hotpot" aria-pressed="false">热乎乎</button>
+            <button class="cp-filter" type="button" data-meal-filter="japanese" aria-pressed="false">清淡系</button>
+            <button class="cp-filter" type="button" data-meal-filter="home" aria-pressed="false">家常味</button>
+          </div>
 
-          &lt;div class=&quot;cp-list&quot; id=&quot;cp-meal-list&quot;&gt;
-            &lt;article class=&quot;cp-item&quot; data-category=&quot;hotpot&quot; data-title=&quot;青花椒烤鱼&quot; data-meta=&quot;两个人点一条刚刚好&quot;&gt;
-              &lt;div class=&quot;cp-thumb peach&quot; aria-hidden=&quot;true&quot;&gt;&lt;i data-lucide=&quot;flame&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-              &lt;div class=&quot;cp-item-copy&quot;&gt;
-                &lt;h4&gt;青花椒烤鱼&lt;/h4&gt;
-                &lt;p&gt;湖边店 · 步行 12 分钟&lt;/p&gt;
-                &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;麻辣&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;人均 ¥80&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏青花椒烤鱼&quot; aria-pressed=&quot;false&quot;&gt;
-                &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/article&gt;
-            &lt;article class=&quot;cp-item&quot; data-category=&quot;japanese&quot; data-title=&quot;山野寿喜锅&quot; data-meta=&quot;下雨天最适合的一锅热汤&quot;&gt;
-              &lt;div class=&quot;cp-thumb mint&quot; aria-hidden=&quot;true&quot;&gt;&lt;i data-lucide=&quot;soup&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-              &lt;div class=&quot;cp-item-copy&quot;&gt;
-                &lt;h4&gt;山野寿喜锅&lt;/h4&gt;
-                &lt;p&gt;梧桐街 · 步行 8 分钟&lt;/p&gt;
-                &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;清淡&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;人均 ¥110&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏山野寿喜锅&quot; aria-pressed=&quot;false&quot;&gt;
-                &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/article&gt;
-            &lt;article class=&quot;cp-item&quot; data-category=&quot;home&quot; data-title=&quot;巷口面包餐厅&quot; data-meta=&quot;吃完可以散步去河边&quot;&gt;
-              &lt;div class=&quot;cp-thumb sun&quot; aria-hidden=&quot;true&quot;&gt;&lt;i data-lucide=&quot;croissant&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-              &lt;div class=&quot;cp-item-copy&quot;&gt;
-                &lt;h4&gt;巷口面包餐厅&lt;/h4&gt;
-                &lt;p&gt;旧城巷口 · 骑车 6 分钟&lt;/p&gt;
-                &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;碳水&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;人均 ¥65&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏巷口面包餐厅&quot; aria-pressed=&quot;false&quot;&gt;
-                &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/article&gt;
-          &lt;/div&gt;
+          <div class="cp-list" id="cp-meal-list">
+            <article class="cp-item" data-category="hotpot" data-title="青花椒烤鱼" data-meta="两个人点一条刚刚好">
+              <div class="cp-thumb peach" aria-hidden="true"><i data-lucide="flame"></i></div>
+              <div class="cp-item-copy">
+                <h4>青花椒烤鱼</h4>
+                <p>湖边店 · 步行 12 分钟</p>
+                <div class="cp-tags"><span class="cp-tag">麻辣</span><span class="cp-tag">人均 ¥80</span></div>
+              </div>
+              <button class="cp-save" type="button" aria-label="收藏青花椒烤鱼" aria-pressed="false">
+                <i data-lucide="heart" aria-hidden="true"></i>
+              </button>
+            </article>
+            <article class="cp-item" data-category="japanese" data-title="山野寿喜锅" data-meta="下雨天最适合的一锅热汤">
+              <div class="cp-thumb mint" aria-hidden="true"><i data-lucide="soup"></i></div>
+              <div class="cp-item-copy">
+                <h4>山野寿喜锅</h4>
+                <p>梧桐街 · 步行 8 分钟</p>
+                <div class="cp-tags"><span class="cp-tag">清淡</span><span class="cp-tag">人均 ¥110</span></div>
+              </div>
+              <button class="cp-save" type="button" aria-label="收藏山野寿喜锅" aria-pressed="false">
+                <i data-lucide="heart" aria-hidden="true"></i>
+              </button>
+            </article>
+            <article class="cp-item" data-category="home" data-title="巷口面包餐厅" data-meta="吃完可以散步去河边">
+              <div class="cp-thumb sun" aria-hidden="true"><i data-lucide="croissant"></i></div>
+              <div class="cp-item-copy">
+                <h4>巷口面包餐厅</h4>
+                <p>旧城巷口 · 骑车 6 分钟</p>
+                <div class="cp-tags"><span class="cp-tag">碳水</span><span class="cp-tag">人均 ¥65</span></div>
+              </div>
+              <button class="cp-save" type="button" aria-label="收藏巷口面包餐厅" aria-pressed="false">
+                <i data-lucide="heart" aria-hidden="true"></i>
+              </button>
+            </article>
+          </div>
 
-          &lt;button class=&quot;cp-primary&quot; type=&quot;button&quot; data-random=&quot;meal&quot;&gt;
-            &lt;i data-lucide=&quot;dices&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+          <button class="cp-primary" type="button" data-random="meal">
+            <i data-lucide="dices" aria-hidden="true"></i>
             从这些里帮我选
-          &lt;/button&gt;
-        &lt;/section&gt;
+          </button>
+        </section>
 
-        &lt;section class=&quot;cp-screen&quot; data-screen=&quot;play&quot; aria-labelledby=&quot;cp-play-title&quot; hidden&gt;
-          &lt;div class=&quot;cp-screen-head&quot;&gt;
-            &lt;div&gt;
-              &lt;h1 class=&quot;cp-title&quot; id=&quot;cp-play-title&quot;&gt;周末去哪玩？&lt;/h1&gt;
-              &lt;p class=&quot;cp-subtitle&quot;&gt;按天气、预算和心情挑一个。&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;button class=&quot;cp-round-add&quot; id=&quot;cp-add-place-toggle&quot; type=&quot;button&quot; aria-label=&quot;添加想去的地方&quot;&gt;
-              &lt;i data-lucide=&quot;plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-            &lt;/button&gt;
-          &lt;/div&gt;
+        <section class="cp-screen" data-screen="play" aria-labelledby="cp-play-title" hidden>
+          <div class="cp-screen-head">
+            <div>
+              <h1 class="cp-title" id="cp-play-title">周末去哪玩？</h1>
+              <p class="cp-subtitle">按天气、预算和心情挑一个。</p>
+            </div>
+            <button class="cp-round-add" id="cp-add-place-toggle" type="button" aria-label="添加想去的地方">
+              <i data-lucide="plus" aria-hidden="true"></i>
+            </button>
+          </div>
 
-          &lt;div class=&quot;cp-partner-bubble&quot;&gt;
-            &lt;span class=&quot;cp-mini-avatar&quot;&gt;满&lt;/span&gt;
-            小满说：“想找个人不多、能慢慢逛的地方。”
-          &lt;/div&gt;
+          <div class="cp-partner-bubble">
+            <span class="cp-mini-avatar" id="cp-place-avatar">满</span>
+            <span id="cp-place-quote">小满说：“想找个人不多、能慢慢逛的地方。”</span>
+          </div>
 
-          &lt;form class=&quot;cp-form&quot; id=&quot;cp-place-form&quot; hidden&gt;
-            &lt;h3&gt;种下一个约会愿望&lt;/h3&gt;
-            &lt;div class=&quot;cp-field&quot;&gt;
-              &lt;label for=&quot;cp-place-name&quot;&gt;地点名称&lt;/label&gt;
-              &lt;input id=&quot;cp-place-name&quot; name=&quot;name&quot; autocomplete=&quot;off&quot; placeholder=&quot;例如：植物园温室&quot; required&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-field&quot;&gt;
-              &lt;label for=&quot;cp-place-type&quot;&gt;类型&lt;/label&gt;
-              &lt;select id=&quot;cp-place-type&quot; name=&quot;type&quot;&gt;
-                &lt;option value=&quot;indoor&quot;&gt;室内&lt;/option&gt;
-                &lt;option value=&quot;outdoor&quot;&gt;户外&lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-field&quot;&gt;
-              &lt;label for=&quot;cp-place-detail&quot;&gt;距离与花费&lt;/label&gt;
-              &lt;input id=&quot;cp-place-detail&quot; name=&quot;detail&quot; autocomplete=&quot;off&quot; placeholder=&quot;例如：地铁 30 分钟 · 免费&quot; required&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-form-actions&quot;&gt;
-              &lt;button class=&quot;cp-secondary&quot; id=&quot;cp-place-cancel&quot; type=&quot;button&quot;&gt;先不添加&lt;/button&gt;
-              &lt;button class=&quot;cp-primary&quot; id=&quot;cp-place-save&quot; type=&quot;button&quot;&gt;加入想去&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/form&gt;
+          <form class="cp-form" id="cp-place-form" hidden>
+            <h3>种下一个约会愿望</h3>
+            <div class="cp-field">
+              <label for="cp-place-name">地点名称</label>
+              <input id="cp-place-name" name="name" autocomplete="off" placeholder="例如：植物园温室" required>
+            </div>
+            <div class="cp-field">
+              <label for="cp-place-type">类型</label>
+              <select id="cp-place-type" name="type">
+                <option value="indoor">室内</option>
+                <option value="outdoor">户外</option>
+              </select>
+            </div>
+            <div class="cp-field">
+              <label for="cp-place-detail">距离与花费</label>
+              <input id="cp-place-detail" name="detail" autocomplete="off" placeholder="例如：地铁 30 分钟 · 免费" required>
+            </div>
+            <div class="cp-form-actions">
+              <button class="cp-secondary" id="cp-place-cancel" type="button">先不添加</button>
+              <button class="cp-primary" id="cp-place-save" type="button">加入想去</button>
+            </div>
+          </form>
 
-          &lt;div class=&quot;cp-filters&quot; role=&quot;group&quot; aria-label=&quot;筛选出行类型&quot;&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-place-filter=&quot;all&quot; aria-pressed=&quot;true&quot;&gt;全部&lt;/button&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-place-filter=&quot;indoor&quot; aria-pressed=&quot;false&quot;&gt;室内&lt;/button&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-place-filter=&quot;outdoor&quot; aria-pressed=&quot;false&quot;&gt;户外&lt;/button&gt;
-            &lt;button class=&quot;cp-filter&quot; type=&quot;button&quot; data-place-filter=&quot;free&quot; aria-pressed=&quot;false&quot;&gt;免费&lt;/button&gt;
-          &lt;/div&gt;
+          <div class="cp-filters" role="group" aria-label="筛选出行类型">
+            <button class="cp-filter" type="button" data-place-filter="all" aria-pressed="true">全部</button>
+            <button class="cp-filter" type="button" data-place-filter="indoor" aria-pressed="false">室内</button>
+            <button class="cp-filter" type="button" data-place-filter="outdoor" aria-pressed="false">户外</button>
+            <button class="cp-filter" type="button" data-place-filter="free" aria-pressed="false">免费</button>
+          </div>
 
-          &lt;div class=&quot;cp-list&quot; id=&quot;cp-place-list&quot;&gt;
-            &lt;article class=&quot;cp-item&quot; data-category=&quot;indoor&quot; data-free=&quot;true&quot; data-title=&quot;木棉美术馆&quot; data-meta=&quot;安静看一场日落主题展&quot;&gt;
-              &lt;div class=&quot;cp-thumb lilac&quot; aria-hidden=&quot;true&quot;&gt;&lt;i data-lucide=&quot;image&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-              &lt;div class=&quot;cp-item-copy&quot;&gt;
-                &lt;h4&gt;木棉美术馆&lt;/h4&gt;
-                &lt;p&gt;地铁 4 站 · 约 2 小时&lt;/p&gt;
-                &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;室内&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;¥60 / 人&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏木棉美术馆&quot; aria-pressed=&quot;false&quot;&gt;
-                &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/article&gt;
-            &lt;article class=&quot;cp-item&quot; data-category=&quot;outdoor&quot; data-free=&quot;true&quot; data-title=&quot;江边落日步道&quot; data-meta=&quot;适合天气好的傍晚慢慢走&quot;&gt;
-              &lt;div class=&quot;cp-thumb sun&quot; aria-hidden=&quot;true&quot;&gt;&lt;i data-lucide=&quot;sunset&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-              &lt;div class=&quot;cp-item-copy&quot;&gt;
-                &lt;h4&gt;江边落日步道&lt;/h4&gt;
-                &lt;p&gt;骑车 20 分钟 · 约 1.5 小时&lt;/p&gt;
-                &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;户外&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;免费&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏江边落日步道&quot; aria-pressed=&quot;false&quot;&gt;
-                &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/article&gt;
-            &lt;article class=&quot;cp-item&quot; data-category=&quot;indoor&quot; data-free=&quot;false&quot; data-title=&quot;旧城手作工坊&quot; data-meta=&quot;一起做两只有点歪的陶杯&quot;&gt;
-              &lt;div class=&quot;cp-thumb peach&quot; aria-hidden=&quot;true&quot;&gt;&lt;i data-lucide=&quot;palette&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-              &lt;div class=&quot;cp-item-copy&quot;&gt;
-                &lt;h4&gt;旧城手作工坊&lt;/h4&gt;
-                &lt;p&gt;公交 25 分钟 · 约 3 小时&lt;/p&gt;
-                &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;室内&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;¥128 / 人&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏旧城手作工坊&quot; aria-pressed=&quot;false&quot;&gt;
-                &lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
-            &lt;/article&gt;
-          &lt;/div&gt;
+          <section class="cp-vote-board" aria-labelledby="cp-vote-title">
+            <div class="cp-vote-board-top">
+              <span class="cp-vote-board-icon"><i data-lucide="vote" aria-hidden="true"></i></span>
+              <span class="cp-vote-board-copy">
+                <strong id="cp-vote-title">周末共同投票</strong>
+                <span id="cp-vote-status" aria-live="polite">先选 1–3 个你心动的地方</span>
+              </span>
+              <span class="cp-vote-board-count" id="cp-vote-count">0 / 3</span>
+            </div>
+            <div class="cp-vote-board-meta">
+              <span class="cp-voter-dots" id="cp-voter-dots"></span>
+              <button class="cp-vote-share" id="cp-share-vote" type="button" disabled>生成投票链接</button>
+            </div>
+          </section>
 
-          &lt;button class=&quot;cp-primary&quot; type=&quot;button&quot; data-random=&quot;place&quot;&gt;
-            &lt;i data-lucide=&quot;dices&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+          <div class="cp-list" id="cp-place-list">
+            <article class="cp-item cp-place-item" data-place-id="art" data-icon="image" data-tone="lilac" data-category="indoor" data-free="false" data-title="木棉美术馆" data-meta="安静看一场日落主题展">
+              <div class="cp-thumb lilac" aria-hidden="true"><i data-lucide="image"></i></div>
+              <div class="cp-item-copy">
+                <h4>木棉美术馆</h4>
+                <p>地铁 4 站 · 约 2 小时</p>
+                <div class="cp-tags"><span class="cp-tag">室内</span><span class="cp-tag">¥60 / 人</span></div>
+                <div class="cp-vote-marks" data-vote-marks="art"></div>
+              </div>
+              <button class="cp-vote-btn" type="button" data-vote-place="art" aria-label="为木棉美术馆投票" aria-pressed="false">
+                <i data-lucide="check" aria-hidden="true"></i>
+                投票
+              </button>
+            </article>
+            <article class="cp-item cp-place-item" data-place-id="river" data-icon="sunset" data-tone="sun" data-category="outdoor" data-free="true" data-title="江边落日步道" data-meta="适合天气好的傍晚慢慢走">
+              <div class="cp-thumb sun" aria-hidden="true"><i data-lucide="sunset"></i></div>
+              <div class="cp-item-copy">
+                <h4>江边落日步道</h4>
+                <p>骑车 20 分钟 · 约 1.5 小时</p>
+                <div class="cp-tags"><span class="cp-tag">户外</span><span class="cp-tag">免费</span></div>
+                <div class="cp-vote-marks" data-vote-marks="river"></div>
+              </div>
+              <button class="cp-vote-btn" type="button" data-vote-place="river" aria-label="为江边落日步道投票" aria-pressed="false">
+                <i data-lucide="check" aria-hidden="true"></i>
+                投票
+              </button>
+            </article>
+            <article class="cp-item cp-place-item" data-place-id="workshop" data-icon="palette" data-tone="peach" data-category="indoor" data-free="false" data-title="旧城手作工坊" data-meta="一起做两只有点歪的陶杯">
+              <div class="cp-thumb peach" aria-hidden="true"><i data-lucide="palette"></i></div>
+              <div class="cp-item-copy">
+                <h4>旧城手作工坊</h4>
+                <p>公交 25 分钟 · 约 3 小时</p>
+                <div class="cp-tags"><span class="cp-tag">室内</span><span class="cp-tag">¥128 / 人</span></div>
+                <div class="cp-vote-marks" data-vote-marks="workshop"></div>
+              </div>
+              <button class="cp-vote-btn" type="button" data-vote-place="workshop" aria-label="为旧城手作工坊投票" aria-pressed="false">
+                <i data-lucide="check" aria-hidden="true"></i>
+                投票
+              </button>
+            </article>
+          </div>
+
+          <button class="cp-primary" type="button" data-random="place">
+            <i data-lucide="dices" aria-hidden="true"></i>
             随机决定周末
-          &lt;/button&gt;
-        &lt;/section&gt;
+          </button>
+        </section>
 
-        &lt;section class=&quot;cp-screen&quot; data-screen=&quot;memory&quot; aria-labelledby=&quot;cp-memory-title&quot; hidden&gt;
-          &lt;p class=&quot;cp-eyebrow&quot;&gt;一起走过的日子&lt;/p&gt;
-          &lt;h1 class=&quot;cp-title&quot; id=&quot;cp-memory-title&quot;&gt;我们的足迹&lt;/h1&gt;
-          &lt;p class=&quot;cp-subtitle&quot;&gt;好吃的、好玩的，还有当时的心情。&lt;/p&gt;
+        <section class="cp-screen" data-screen="memory" aria-labelledby="cp-memory-title" hidden>
+          <p class="cp-eyebrow">一起走过的日子</p>
+          <h1 class="cp-title" id="cp-memory-title">我们的足迹</h1>
+          <p class="cp-subtitle">好吃的、好玩的，还有当时的心情。</p>
 
-          &lt;div class=&quot;cp-history-summary&quot;&gt;
-            &lt;div class=&quot;cp-summary-box&quot;&gt;
-              &lt;strong&gt;5 次&lt;/strong&gt;
-              &lt;span&gt;本月一起出门&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;cp-summary-box&quot;&gt;
-              &lt;strong&gt;3 顿&lt;/strong&gt;
-              &lt;span&gt;最近一个月的好吃的&lt;/span&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+          <div class="cp-history-summary">
+            <div class="cp-summary-box">
+              <strong>5 次</strong>
+              <span>本月一起出门</span>
+            </div>
+            <div class="cp-summary-box">
+              <strong>3 顿</strong>
+              <span>最近一个月的好吃的</span>
+            </div>
+          </div>
 
-          &lt;div class=&quot;cp-section-head&quot;&gt;
-            &lt;h3&gt;最近记录&lt;/h3&gt;
-            &lt;span&gt;只属于你们&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;cp-timeline&quot; id=&quot;cp-history-list&quot;&gt;
-            &lt;article class=&quot;cp-memory&quot;&gt;
-              &lt;div class=&quot;cp-memory-top&quot;&gt;&lt;strong&gt;木棉美术馆&lt;/strong&gt;&lt;span&gt;10月24日&lt;/span&gt;&lt;/div&gt;
-              &lt;p&gt;一起看了日落主题展，在出口买了两张明信片。&lt;/p&gt;
-              &lt;span class=&quot;cp-rating&quot;&gt;&lt;i data-lucide=&quot;heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 很开心&lt;/span&gt;
-            &lt;/article&gt;
-            &lt;article class=&quot;cp-memory&quot;&gt;
-              &lt;div class=&quot;cp-memory-top&quot;&gt;&lt;strong&gt;山野寿喜锅&lt;/strong&gt;&lt;span&gt;10月18日&lt;/span&gt;&lt;/div&gt;
-              &lt;p&gt;下雨天排队 20 分钟，但热汤很值得。&lt;/p&gt;
-              &lt;span class=&quot;cp-rating&quot;&gt;&lt;i data-lucide=&quot;utensils&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 还想吃&lt;/span&gt;
-            &lt;/article&gt;
-            &lt;article class=&quot;cp-memory&quot;&gt;
-              &lt;div class=&quot;cp-memory-top&quot;&gt;&lt;strong&gt;江边落日步道&lt;/strong&gt;&lt;span&gt;10月12日&lt;/span&gt;&lt;/div&gt;
-              &lt;p&gt;风很大，走了六千多步，拍到了橘子色的天。&lt;/p&gt;
-              &lt;span class=&quot;cp-rating&quot;&gt;&lt;i data-lucide=&quot;sun&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 想再去&lt;/span&gt;
-            &lt;/article&gt;
-          &lt;/div&gt;
-        &lt;/section&gt;
-      &lt;/main&gt;
+          <div class="cp-section-head">
+            <h3>最近记录</h3>
+            <span>只属于你们</span>
+          </div>
+          <div class="cp-timeline" id="cp-history-list">
+            <article class="cp-memory">
+              <div class="cp-memory-top"><strong>木棉美术馆</strong><span>10月24日</span></div>
+              <p>一起看了日落主题展，在出口买了两张明信片。</p>
+              <span class="cp-rating"><i data-lucide="heart" aria-hidden="true"></i> 很开心</span>
+            </article>
+            <article class="cp-memory">
+              <div class="cp-memory-top"><strong>山野寿喜锅</strong><span>10月18日</span></div>
+              <p>下雨天排队 20 分钟，但热汤很值得。</p>
+              <span class="cp-rating"><i data-lucide="utensils" aria-hidden="true"></i> 还想吃</span>
+            </article>
+            <article class="cp-memory">
+              <div class="cp-memory-top"><strong>江边落日步道</strong><span>10月12日</span></div>
+              <p>风很大，走了六千多步，拍到了橘子色的天。</p>
+              <span class="cp-rating"><i data-lucide="sun" aria-hidden="true"></i> 想再去</span>
+            </article>
+          </div>
+        </section>
+      </main>
 
-      &lt;nav class=&quot;cp-bottom-nav&quot; aria-label=&quot;主要功能&quot;&gt;
-        &lt;button class=&quot;cp-nav-btn&quot; type=&quot;button&quot; data-nav=&quot;home&quot; aria-current=&quot;page&quot;&gt;
-          &lt;i data-lucide=&quot;house&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-          &lt;span&gt;首页&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button class=&quot;cp-nav-btn&quot; type=&quot;button&quot; data-nav=&quot;eat&quot;&gt;
-          &lt;i data-lucide=&quot;utensils&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-          &lt;span&gt;点菜&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button class=&quot;cp-nav-btn&quot; type=&quot;button&quot; data-nav=&quot;play&quot;&gt;
-          &lt;i data-lucide=&quot;map&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-          &lt;span&gt;去哪玩&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button class=&quot;cp-nav-btn&quot; type=&quot;button&quot; data-nav=&quot;memory&quot;&gt;
-          &lt;i data-lucide=&quot;bookmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-          &lt;span&gt;记录&lt;/span&gt;
-        &lt;/button&gt;
-      &lt;/nav&gt;
+      <nav class="cp-bottom-nav" aria-label="主要功能">
+        <button class="cp-nav-btn" type="button" data-nav="home" aria-current="page">
+          <i data-lucide="house" aria-hidden="true"></i>
+          <span>首页</span>
+        </button>
+        <button class="cp-nav-btn" type="button" data-nav="eat">
+          <i data-lucide="utensils" aria-hidden="true"></i>
+          <span>点菜</span>
+        </button>
+        <button class="cp-nav-btn" type="button" data-nav="play">
+          <i data-lucide="map" aria-hidden="true"></i>
+          <span>去哪玩</span>
+        </button>
+        <button class="cp-nav-btn" type="button" data-nav="memory">
+          <i data-lucide="bookmark" aria-hidden="true"></i>
+          <span>记录</span>
+        </button>
+      </nav>
 
-      &lt;div class=&quot;cp-dialog-layer&quot; id=&quot;cp-dialog-layer&quot; hidden&gt;
-        &lt;div class=&quot;cp-dialog&quot; id=&quot;cp-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;cp-dialog-title&quot;&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+      <div class="cp-dialog-layer" id="cp-dialog-layer" hidden>
+        <div class="cp-dialog" id="cp-dialog" role="dialog" aria-modal="true" aria-labelledby="cp-dialog-title"></div>
+      </div>
+    </div>
+  </div>
 
-  &lt;script&gt;
-    (() =&gt; {
-      const root = document.getElementById(&quot;couple-life-prototype&quot;);
+  <script>
+    (() => {
+      const root = document.getElementById("couple-life-prototype");
       if (!root) return;
 
-      const screens = [...root.querySelectorAll(&quot;[data-screen]&quot;)];
-      const navButtons = [...root.querySelectorAll(&quot;[data-nav]&quot;)];
-      const goButtons = [...root.querySelectorAll(&quot;[data-go]&quot;)];
-      const flash = root.querySelector(&quot;#cp-flash&quot;);
-      const dialogLayer = root.querySelector(&quot;#cp-dialog-layer&quot;);
-      const dialog = root.querySelector(&quot;#cp-dialog&quot;);
-      const mealForm = root.querySelector(&quot;#cp-meal-form&quot;);
-      const placeForm = root.querySelector(&quot;#cp-place-form&quot;);
-      let currentView = &quot;home&quot;;
+      const screens = [...root.querySelectorAll("[data-screen]")];
+      const navButtons = [...root.querySelectorAll("[data-nav]")];
+      const goButtons = [...root.querySelectorAll("[data-go]")];
+      const flash = root.querySelector("#cp-flash");
+      const dialogLayer = root.querySelector("#cp-dialog-layer");
+      const dialog = root.querySelector("#cp-dialog");
+      const mealForm = root.querySelector("#cp-meal-form");
+      const placeForm = root.querySelector("#cp-place-form");
+      const voteTitle = root.querySelector("#cp-vote-title");
+      const voteStatus = root.querySelector("#cp-vote-status");
+      const voteCount = root.querySelector("#cp-vote-count");
+      const voterDots = root.querySelector("#cp-voter-dots");
+      const shareVoteButton = root.querySelector("#cp-share-vote");
+      const queryParams = new URLSearchParams(window.location.search);
+      const publicPageUrl = "https://hasanhasanabul1-glitch.github.io/our-little-days/";
+      let currentView = "home";
       let flashTimer;
       let lastFocused = null;
+      let coupleNames = ["小满", "阿川"];
+      let activeVoter = queryParams.has("a") ? (queryParams.has("b") ? null : "b") : "a";
+      const sharedVotes = {
+        a: new Set(parseIdList(queryParams.get("a"))),
+        b: new Set(parseIdList(queryParams.get("b")))
+      };
       const customItems = [];
       const memoryItems = [
         {
-          title: &quot;木棉美术馆&quot;,
-          date: &quot;10月24日&quot;,
-          note: &quot;一起看了日落主题展，在出口买了两张明信片。&quot;,
-          rating: &quot;很开心&quot;,
-          icon: &quot;heart&quot;
+          title: "木棉美术馆",
+          date: "10月24日",
+          note: "一起看了日落主题展，在出口买了两张明信片。",
+          rating: "很开心",
+          icon: "heart"
         },
         {
-          title: &quot;山野寿喜锅&quot;,
-          date: &quot;10月18日&quot;,
-          note: &quot;下雨天排队 20 分钟，但热汤很值得。&quot;,
-          rating: &quot;还想吃&quot;,
-          icon: &quot;utensils&quot;
+          title: "山野寿喜锅",
+          date: "10月18日",
+          note: "下雨天排队 20 分钟，但热汤很值得。",
+          rating: "还想吃",
+          icon: "utensils"
         },
         {
-          title: &quot;江边落日步道&quot;,
-          date: &quot;10月12日&quot;,
-          note: &quot;风很大，走了六千多步，拍到了橘子色的天。&quot;,
-          rating: &quot;想再去&quot;,
-          icon: &quot;sun&quot;
+          title: "江边落日步道",
+          date: "10月12日",
+          note: "风很大，走了六千多步，拍到了橘子色的天。",
+          rating: "想再去",
+          icon: "sun"
         }
       ];
 
-      const icon = (name) =&gt; `&lt;i data-lucide=&quot;${name}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;`;
-      const todayLabel = () =&gt; {
+      const icon = (name) => `<i data-lucide="${name}" aria-hidden="true"></i>`;
+      const todayLabel = () => {
         const now = new Date();
         return `${now.getMonth() + 1}月${now.getDate()}日`;
       };
 
+      function parseIdList(value) {
+        if (typeof value !== "string" || !value) return [];
+        return [...new Set(value.split(",").map((item) => item.trim()).filter(Boolean))].slice(0, 20);
+      }
+
+      function safeName(value, fallback) {
+        if (typeof value !== "string") return fallback;
+        const name = value.trim().replace(/\s+/g, " ").slice(0, 12);
+        return name || fallback;
+      }
+
+      function nameInitial(name) {
+        return Array.from(name.trim())[0] || "?";
+      }
+
+      function updateDateLabel() {
+        const now = new Date();
+        const weekdays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+        root.querySelector("#cp-date-label").textContent = `${now.getMonth() + 1}月${now.getDate()}日 · ${weekdays[now.getDay()]}`;
+      }
+
+      function updateCoupleUI() {
+        const [one, two] = coupleNames;
+        root.querySelector("#cp-display-names").textContent = `${one} & ${two}`;
+        root.querySelector("#cp-avatar-one").textContent = nameInitial(one);
+        root.querySelector("#cp-avatar-two").textContent = nameInitial(two);
+        root.querySelector("#cp-meal-avatar").textContent = nameInitial(two);
+        root.querySelector("#cp-place-avatar").textContent = nameInitial(one);
+        root.querySelector("#cp-meal-quote").textContent = `${two}说：“天气冷了，想吃点热乎的。”`;
+        root.querySelector("#cp-place-quote").textContent = `${one}说：“想找个人不多、能慢慢逛的地方。”`;
+      }
+
       function refreshIcons() {
-        if (window.lucide &amp;&amp; typeof window.lucide.createIcons === &quot;function&quot;) {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
           window.lucide.createIcons({ attrs: { width: 18, height: 18 } });
         }
       }
 
       function saveState() {
-        if (!window.openai || typeof window.openai.setWidgetState !== &quot;function&quot;) return;
+        if (!window.openai || typeof window.openai.setWidgetState !== "function") return;
         const latestMemory = memoryItems[0];
         window.openai.setWidgetState({
           modelContent: {
@@ -3266,30 +1761,35 @@ html&gt;body{padding:0}&lt;/style&gt;
           privateContent: {
             activeView: currentView,
             customItems,
-            memoryItems
+            memoryItems,
+            coupleNames,
+            votes: {
+              a: [...sharedVotes.a],
+              b: [...sharedVotes.b]
+            }
           }
-        }).catch(() =&gt; {});
+        }).catch(() => {});
       }
 
       function showFlash(message) {
         window.clearTimeout(flashTimer);
         flash.textContent = message;
         flash.hidden = false;
-        flashTimer = window.setTimeout(() =&gt; {
+        flashTimer = window.setTimeout(() => {
           flash.hidden = true;
         }, 2200);
       }
 
       function showView(view, persist = true) {
         currentView = view;
-        screens.forEach((screen) =&gt; {
+        screens.forEach((screen) => {
           screen.hidden = screen.dataset.screen !== view;
         });
-        navButtons.forEach((button) =&gt; {
+        navButtons.forEach((button) => {
           if (button.dataset.nav === view) {
-            button.setAttribute(&quot;aria-current&quot;, &quot;page&quot;);
+            button.setAttribute("aria-current", "page");
           } else {
-            button.removeAttribute(&quot;aria-current&quot;);
+            button.removeAttribute("aria-current");
           }
         });
         if (persist) saveState();
@@ -3297,8 +1797,8 @@ html&gt;body{padding:0}&lt;/style&gt;
 
       function closeDialog() {
         dialogLayer.hidden = true;
-        dialog.innerHTML = &quot;&quot;;
-        if (lastFocused &amp;&amp; typeof lastFocused.focus === &quot;function&quot;) lastFocused.focus();
+        dialog.innerHTML = "";
+        if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
       }
 
       function openDialog(content) {
@@ -3306,70 +1806,286 @@ html&gt;body{padding:0}&lt;/style&gt;
         dialog.innerHTML = content;
         dialogLayer.hidden = false;
         refreshIcons();
-        const focusTarget = dialog.querySelector(&quot;button&quot;);
+        const focusTarget = dialog.querySelector("button");
         if (focusTarget) focusTarget.focus();
       }
 
       function renderMemories() {
-        const list = root.querySelector(&quot;#cp-history-list&quot;);
-        list.innerHTML = memoryItems.slice(0, 4).map((item) =&gt; `
-          &lt;article class=&quot;cp-memory&quot;&gt;
-            &lt;div class=&quot;cp-memory-top&quot;&gt;
-              &lt;strong&gt;${escapeHtml(item.title)}&lt;/strong&gt;
-              &lt;span&gt;${escapeHtml(item.date)}&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;p&gt;${escapeHtml(item.note)}&lt;/p&gt;
-            &lt;span class=&quot;cp-rating&quot;&gt;${icon(item.icon)} ${escapeHtml(item.rating)}&lt;/span&gt;
-          &lt;/article&gt;
-        `).join(&quot;&quot;);
+        const list = root.querySelector("#cp-history-list");
+        list.innerHTML = memoryItems.slice(0, 4).map((item) => `
+          <article class="cp-memory">
+            <div class="cp-memory-top">
+              <strong>${escapeHtml(item.title)}</strong>
+              <span>${escapeHtml(item.date)}</span>
+            </div>
+            <p>${escapeHtml(item.note)}</p>
+            <span class="cp-rating">${icon(item.icon)} ${escapeHtml(item.rating)}</span>
+          </article>
+        `).join("");
         refreshIcons();
       }
 
       function escapeHtml(value) {
         return String(value)
-          .replaceAll(&quot;&amp;&quot;, &quot;&amp;amp;&quot;)
-          .replaceAll(&quot;&lt;&quot;, &quot;&amp;lt;&quot;)
-          .replaceAll(&quot;&gt;&quot;, &quot;&amp;gt;&quot;)
-          .replaceAll(&#x27;&quot;&#x27;, &quot;&amp;quot;&quot;)
-          .replaceAll(&quot;&#x27;&quot;, &quot;&amp;#039;&quot;);
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function safeText(value, maxLength, fallback = "") {
+        if (typeof value !== "string") return fallback;
+        return value.trim().replace(/\s+/g, " ").slice(0, maxLength) || fallback;
+      }
+
+      function placeCardMarkup(place) {
+        const tones = ["peach", "mint", "sun", "lilac"];
+        const icons = ["image", "sunset", "palette", "trees", "map-pin"];
+        const tone = tones.includes(place.tone) ? place.tone : "lilac";
+        const itemIcon = icons.includes(place.icon) ? place.icon : "map-pin";
+        const category = place.category === "outdoor" ? "outdoor" : "indoor";
+        const categoryLabel = category === "outdoor" ? "户外" : "室内";
+        const tagOne = safeText(place.tagOne, 20, categoryLabel);
+        const tagTwo = safeText(place.tagTwo, 20, place.free ? "免费" : "想去");
+        const title = safeText(place.title, 40, "未命名地点");
+        const meta = safeText(place.meta, 80, "一起去这里看看");
+        const detail = safeText(place.detail, 60, "等你们一起安排");
+        const id = safeText(place.id, 48, "place").replace(/[^a-zA-Z0-9_-]/g, "") || "place";
+        return `
+          <article class="cp-item cp-place-item" data-place-id="${escapeHtml(id)}" data-icon="${itemIcon}" data-tone="${tone}" data-category="${category}" data-free="${String(Boolean(place.free))}" data-title="${escapeHtml(title)}" data-meta="${escapeHtml(meta)}">
+            <div class="cp-thumb ${tone}" aria-hidden="true">${icon(itemIcon)}</div>
+            <div class="cp-item-copy">
+              <h4>${escapeHtml(title)}</h4>
+              <p>${escapeHtml(detail)}</p>
+              <div class="cp-tags"><span class="cp-tag">${escapeHtml(tagOne)}</span><span class="cp-tag">${escapeHtml(tagTwo)}</span></div>
+              <div class="cp-vote-marks" data-vote-marks="${escapeHtml(id)}"></div>
+            </div>
+            <button class="cp-vote-btn" type="button" data-vote-place="${escapeHtml(id)}" aria-label="为${escapeHtml(title)}投票" aria-pressed="false">
+              ${icon("vote")}
+              <span>投票</span>
+            </button>
+          </article>
+        `;
+      }
+
+      function collectPlaceCatalog() {
+        const seen = new Set();
+        return [...root.querySelectorAll("#cp-place-list .cp-place-item")].map((card, index) => {
+          const originalId = safeText(card.dataset.placeId, 48, `place-${index + 1}`);
+          let id = originalId.replace(/[^a-zA-Z0-9_-]/g, "") || `place-${index + 1}`;
+          while (seen.has(id)) id = `${id}-${index + 1}`;
+          seen.add(id);
+          const tags = [...card.querySelectorAll(".cp-tag")].map((tag) => tag.textContent.trim());
+          return {
+            id,
+            title: safeText(card.dataset.title, 40, "未命名地点"),
+            meta: safeText(card.dataset.meta, 80, "一起去这里看看"),
+            detail: safeText(card.querySelector(".cp-item-copy > p")?.textContent, 60, "等你们一起安排"),
+            category: card.dataset.category === "outdoor" ? "outdoor" : "indoor",
+            free: card.dataset.free === "true",
+            icon: card.dataset.icon || "map-pin",
+            tone: card.dataset.tone || "lilac",
+            tagOne: safeText(tags[0], 20, card.dataset.category === "outdoor" ? "户外" : "室内"),
+            tagTwo: safeText(tags[1], 20, card.dataset.free === "true" ? "免费" : "想去")
+          };
+        }).slice(0, 12);
+      }
+
+      function parseSharedPlaces(raw) {
+        if (typeof raw !== "string" || !raw) return null;
+        try {
+          const values = JSON.parse(raw);
+          if (!Array.isArray(values)) return null;
+          const places = values.slice(0, 12).map((place, index) => ({
+            id: safeText(place?.id, 48, `place-${index + 1}`),
+            title: safeText(place?.title, 40, "未命名地点"),
+            meta: safeText(place?.meta, 80, "一起去这里看看"),
+            detail: safeText(place?.detail, 60, "等你们一起安排"),
+            category: place?.category === "outdoor" ? "outdoor" : "indoor",
+            free: Boolean(place?.free),
+            icon: safeText(place?.icon, 16, "map-pin"),
+            tone: safeText(place?.tone, 16, "lilac"),
+            tagOne: safeText(place?.tagOne, 20, ""),
+            tagTwo: safeText(place?.tagTwo, 20, "")
+          }));
+          return places.length ? places : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function renderPlaceCatalog(places) {
+        if (!Array.isArray(places) || !places.length) return;
+        root.querySelector("#cp-place-list").innerHTML = places.map(placeCardMarkup).join("");
+        refreshIcons();
+      }
+
+      function commonVoteIds() {
+        return [...sharedVotes.a].filter((id) => sharedVotes.b.has(id));
+      }
+
+      function renderVoteBoard() {
+        const aCount = sharedVotes.a.size;
+        const bCount = sharedVotes.b.size;
+        const common = commonVoteIds();
+        const localVotes = activeVoter ? sharedVotes[activeVoter] : new Set();
+        const [one, two] = coupleNames;
+        const resultMode = activeVoter === null && bCount > 0;
+
+        if (resultMode) {
+          const commonTitles = [...root.querySelectorAll("#cp-place-list .cp-place-item")]
+            .filter((card) => common.includes(card.dataset.placeId))
+            .map((card) => card.dataset.title);
+          voteTitle.textContent = common.length ? "你们都想去的" : "投票结果";
+          voteStatus.textContent = common.length
+            ? commonTitles.slice(0, 2).join("、")
+            : "暂时没有重合，再聊聊各自最想去哪里";
+          voteCount.textContent = common.length ? `${common.length} 个共同` : "待商量";
+          shareVoteButton.textContent = "结果已汇总";
+          shareVoteButton.disabled = true;
+        } else if (activeVoter === "b") {
+          voteTitle.textContent = "轮到你了";
+          voteStatus.textContent = aCount
+            ? `${one}已经投了 ${aCount} 个，现在选你心动的地方`
+            : "先选 1–3 个你心动的地方";
+          voteCount.textContent = `${bCount} / 3`;
+          shareVoteButton.textContent = "生成结果发回";
+          shareVoteButton.disabled = bCount === 0;
+        } else {
+          voteTitle.textContent = "周末共同投票";
+          voteStatus.textContent = aCount
+            ? "生成链接后，看看你们有没有共同心动"
+            : "先选 1–3 个你心动的地方";
+          voteCount.textContent = `${aCount} / 3`;
+          shareVoteButton.textContent = "生成投票链接";
+          shareVoteButton.disabled = aCount === 0;
+        }
+
+        voterDots.innerHTML = `
+          <span class="cp-voter-dot ${aCount ? "has-votes" : ""}">${escapeHtml(nameInitial(one))} ${aCount}</span>
+          <span class="cp-voter-dot ${bCount ? "has-votes" : ""}">${escapeHtml(nameInitial(two))} ${bCount}</span>
+        `;
+
+        root.querySelectorAll(".cp-place-item").forEach((card) => {
+          const id = card.dataset.placeId;
+          const markedByA = sharedVotes.a.has(id);
+          const markedByB = sharedVotes.b.has(id);
+          const marks = card.querySelector(`[data-vote-marks="${CSS.escape(id)}"]`);
+          if (marks) {
+            marks.innerHTML = [
+              markedByA ? `<span class="cp-vote-mark">${escapeHtml(nameInitial(one))} ✓</span>` : "",
+              markedByB ? `<span class="cp-vote-mark">${escapeHtml(nameInitial(two))} ✓</span>` : ""
+            ].join("");
+          }
+          const button = card.querySelector("[data-vote-place]");
+          if (!button) return;
+          const voted = localVotes.has(id);
+          button.classList.toggle("is-voted", voted);
+          button.setAttribute("aria-pressed", String(voted));
+          button.disabled = resultMode;
+          const label = resultMode ? "已汇总" : voted ? "已投" : "投票";
+          button.innerHTML = `${icon(resultMode ? "check" : voted ? "check" : "vote")}<span>${label}</span>`;
+          button.setAttribute("aria-label", resultMode
+            ? `${card.dataset.title}：投票已汇总`
+            : `${voted ? "取消" : "投给"}${card.dataset.title}`);
+        });
+        refreshIcons();
+      }
+
+      function togglePlaceVote(id) {
+        if (!activeVoter) {
+          showFlash("双方投票已经汇总；重新生成一条链接可以再投一轮");
+          return;
+        }
+        const votes = sharedVotes[activeVoter];
+        if (!votes.has(id) && votes.size >= 3) {
+          showFlash("最多选 3 个地方，先取消一个吧");
+          return;
+        }
+        if (votes.has(id)) votes.delete(id);
+        else votes.add(id);
+        renderVoteBoard();
+        showFlash(votes.has(id) ? "已投给这个地方" : "已取消这一票");
+      }
+
+      function buildVoteShareUrl() {
+        const currentIsHttp = /^https?:$/.test(window.location.protocol);
+        const url = new URL(currentIsHttp ? window.location.href : publicPageUrl);
+        url.search = "";
+        url.hash = "";
+        url.searchParams.set("n1", coupleNames[0]);
+        url.searchParams.set("n2", coupleNames[1]);
+        url.searchParams.set("p", JSON.stringify(collectPlaceCatalog()));
+        if (sharedVotes.a.size) url.searchParams.set("a", [...sharedVotes.a].join(","));
+        else url.searchParams.delete("a");
+        if (sharedVotes.b.size) url.searchParams.set("b", [...sharedVotes.b].join(","));
+        else url.searchParams.delete("b");
+        return url.toString();
+      }
+
+      function openVoteShareDialog() {
+        const shareUrl = buildVoteShareUrl();
+        const sendingResults = activeVoter === "b" && sharedVotes.b.size > 0;
+        const recipient = activeVoter === "b" ? coupleNames[0] : coupleNames[1];
+        openDialog(`
+          <div class="cp-dialog-head">
+            <span class="cp-dialog-badge">${icon(sendingResults ? "check" : "vote")}</span>
+            <button class="cp-dialog-close" type="button" data-close-dialog aria-label="关闭">${icon("x")}</button>
+          </div>
+          <p class="cp-dialog-kicker">${sendingResults ? "共同结果已经生成" : "一起决定周末"}</p>
+          <h3 id="cp-dialog-title">${sendingResults ? "把结果发回去" : `发给${escapeHtml(recipient)}投票`}</h3>
+          <p>${sendingResults
+            ? "对方打开链接后，就能看到你们各自投了哪里，以及共同想去的地方。"
+            : "对方打开链接选择心动地点后，会生成一条包含双方投票的结果链接。"
+          }</p>
+          <input class="cp-share-link" id="cp-ballot-url" readonly value="${escapeHtml(shareUrl)}" aria-label="共同投票链接">
+          <div class="cp-dialog-actions">
+            <button class="cp-secondary" type="button" data-close-dialog>关闭</button>
+            <button class="cp-primary" type="button" data-copy-ballot>${icon("copy")} 复制链接</button>
+          </div>
+        `);
+        const input = dialog.querySelector("#cp-ballot-url");
+        input.focus();
+        input.select();
       }
 
       function getRandomButton(type) {
-        return root.querySelector(`[data-random=&quot;${type}&quot;]`);
+        return root.querySelector(`[data-random="${type}"]`);
       }
 
       function visibleItems(type) {
-        const selector = type === &quot;meal&quot; ? &quot;#cp-meal-list .cp-item&quot; : &quot;#cp-place-list .cp-item&quot;;
-        return [...root.querySelectorAll(selector)].filter((item) =&gt; !item.hidden);
+        const selector = type === "meal" ? "#cp-meal-list .cp-item" : "#cp-place-list .cp-item";
+        return [...root.querySelectorAll(selector)].filter((item) => !item.hidden);
       }
 
       function openRandomResult(type, sourceButton) {
         const items = visibleItems(type);
         if (!items.length) {
-          showFlash(&quot;这个筛选下还没有选项，先添加一个吧&quot;);
+          showFlash("这个筛选下还没有选项，先添加一个吧");
           return;
         }
         lastFocused = sourceButton;
         const picked = items[Math.floor(Math.random() * items.length)];
         const title = picked.dataset.title;
         const meta = picked.dataset.meta;
-        const kind = type === &quot;meal&quot; ? &quot;今晚就吃这家？&quot; : &quot;这周就去这里？&quot;;
-        const kicker = type === &quot;meal&quot; ? &quot;命运替你点了一道&quot; : &quot;共同的周末计划&quot;;
-        const note = type === &quot;meal&quot;
-          ? &quot;两个人都没意见的话，就把这顿饭安排上。&quot;
-          : &quot;天气合适就去兑现这个小小约定。&quot;;
+        const kind = type === "meal" ? "今晚就吃这家？" : "这周就去这里？";
+        const kicker = type === "meal" ? "命运替你点了一道" : "共同的周末计划";
+        const note = type === "meal"
+          ? "两个人都没意见的话，就把这顿饭安排上。"
+          : "天气合适就去兑现这个小小约定。";
         openDialog(`
-          &lt;div class=&quot;cp-dialog-head&quot;&gt;
-            &lt;span class=&quot;cp-dialog-badge&quot;&gt;${icon(&quot;sparkles&quot;)}&lt;/span&gt;
-            &lt;button class=&quot;cp-dialog-close&quot; type=&quot;button&quot; data-close-dialog aria-label=&quot;关闭&quot;&gt;${icon(&quot;x&quot;)}&lt;/button&gt;
-          &lt;/div&gt;
-          &lt;p class=&quot;cp-dialog-kicker&quot;&gt;${kicker}&lt;/p&gt;
-          &lt;h3 id=&quot;cp-dialog-title&quot;&gt;${escapeHtml(kind)}&lt;/h3&gt;
-          &lt;p&gt;&lt;strong&gt;${escapeHtml(title)}&lt;/strong&gt;&lt;br&gt;${escapeHtml(meta)}。${note}&lt;/p&gt;
-          &lt;div class=&quot;cp-dialog-actions&quot;&gt;
-            &lt;button class=&quot;cp-secondary&quot; type=&quot;button&quot; data-reroll=&quot;${type}&quot;&gt;再抽一次&lt;/button&gt;
-            &lt;button class=&quot;cp-primary&quot; type=&quot;button&quot; data-confirm-pick=&quot;${type}&quot; data-pick-title=&quot;${escapeHtml(title)}&quot; data-pick-meta=&quot;${escapeHtml(meta)}&quot;&gt;${icon(&quot;check&quot;)} 就这个&lt;/button&gt;
-          &lt;/div&gt;
+          <div class="cp-dialog-head">
+            <span class="cp-dialog-badge">${icon("sparkles")}</span>
+            <button class="cp-dialog-close" type="button" data-close-dialog aria-label="关闭">${icon("x")}</button>
+          </div>
+          <p class="cp-dialog-kicker">${kicker}</p>
+          <h3 id="cp-dialog-title">${escapeHtml(kind)}</h3>
+          <p><strong>${escapeHtml(title)}</strong><br>${escapeHtml(meta)}。${note}</p>
+          <div class="cp-dialog-actions">
+            <button class="cp-secondary" type="button" data-reroll="${type}">再抽一次</button>
+            <button class="cp-primary" type="button" data-confirm-pick="${type}" data-pick-title="${escapeHtml(title)}" data-pick-meta="${escapeHtml(meta)}">${icon("check")} 就这个</button>
+          </div>
         `);
       }
 
@@ -3377,92 +2093,108 @@ html&gt;body{padding:0}&lt;/style&gt;
         memoryItems.unshift({
           title,
           date: todayLabel(),
-          note: type === &quot;meal&quot;
+          note: type === "meal"
             ? `${meta}。这顿饭被两个人的随机选择选中了。`
             : `${meta}。先记下来，等周末一起去。`,
-          rating: type === &quot;meal&quot; ? &quot;今晚吃这个&quot; : &quot;期待出发&quot;,
-          icon: type === &quot;meal&quot; ? &quot;utensils&quot; : &quot;map-pin&quot;
+          rating: type === "meal" ? "今晚吃这个" : "期待出发",
+          icon: type === "meal" ? "utensils" : "map-pin"
         });
         renderMemories();
         closeDialog();
-        showFlash(&quot;已经放进你们的共同记录&quot;);
+        showFlash("已经放进你们的共同记录");
         saveState();
       }
 
-      function makeItem(type, name, category, detail) {
-        const isMeal = type === &quot;meal&quot;;
-        const tone = category === &quot;japanese&quot; || category === &quot;outdoor&quot; ? &quot;mint&quot; : category === &quot;home&quot; ? &quot;sun&quot; : &quot;peach&quot;;
-        const itemIcon = isMeal ? (category === &quot;japanese&quot; ? &quot;soup&quot; : category === &quot;home&quot; ? &quot;croissant&quot; : &quot;flame&quot;) : (category === &quot;outdoor&quot; ? &quot;trees&quot; : &quot;palette&quot;);
+      function makeItem(type, name, category, detail, options = {}) {
+        const isMeal = type === "meal";
+        const tone = category === "japanese" || category === "outdoor" ? "mint" : category === "home" ? "sun" : "peach";
+        const itemIcon = isMeal ? (category === "japanese" ? "soup" : category === "home" ? "croissant" : "flame") : (category === "outdoor" ? "trees" : "palette");
+        const placeId = safeText(options.id, 48, `custom-${Date.now().toString(36)}`).replace(/[^a-zA-Z0-9_-]/g, "");
         const label = isMeal
-          ? ({ hotpot: &quot;热乎乎&quot;, japanese: &quot;清淡系&quot;, home: &quot;家常味&quot; }[category] || &quot;想吃&quot;)
-          : ({ indoor: &quot;室内&quot;, outdoor: &quot;户外&quot; }[category] || &quot;想去&quot;);
+          ? ({ hotpot: "热乎乎", japanese: "清淡系", home: "家常味" }[category] || "想吃")
+          : ({ indoor: "室内", outdoor: "户外" }[category] || "想去");
         return `
-          &lt;article class=&quot;cp-item&quot; data-custom-item=&quot;true&quot; data-category=&quot;${category}&quot; data-free=&quot;${detail.includes(&quot;免费&quot;) ? &quot;true&quot; : &quot;false&quot;}&quot; data-title=&quot;${escapeHtml(name)}&quot; data-meta=&quot;${escapeHtml(detail)}&quot;&gt;
-            &lt;div class=&quot;cp-thumb ${tone}&quot; aria-hidden=&quot;true&quot;&gt;${icon(itemIcon)}&lt;/div&gt;
-            &lt;div class=&quot;cp-item-copy&quot;&gt;
-              &lt;h4&gt;${escapeHtml(name)}&lt;/h4&gt;
-              &lt;p&gt;${escapeHtml(detail)}&lt;/p&gt;
-              &lt;div class=&quot;cp-tags&quot;&gt;&lt;span class=&quot;cp-tag&quot;&gt;${label}&lt;/span&gt;&lt;span class=&quot;cp-tag&quot;&gt;新添加&lt;/span&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;button class=&quot;cp-save&quot; type=&quot;button&quot; aria-label=&quot;收藏${escapeHtml(name)}&quot; aria-pressed=&quot;false&quot;&gt;${icon(&quot;heart&quot;)}&lt;/button&gt;
-          &lt;/article&gt;
+          <article class="cp-item ${isMeal ? "" : "cp-place-item"}" data-custom-item="true" ${isMeal ? "" : `data-place-id="${placeId}" data-icon="${itemIcon}" data-tone="${tone}"`} data-category="${category}" data-free="${detail.includes("免费") ? "true" : "false"}" data-title="${escapeHtml(name)}" data-meta="${escapeHtml(detail)}">
+            <div class="cp-thumb ${tone}" aria-hidden="true">${icon(itemIcon)}</div>
+            <div class="cp-item-copy">
+              <h4>${escapeHtml(name)}</h4>
+              <p>${escapeHtml(detail)}</p>
+              <div class="cp-tags"><span class="cp-tag">${label}</span><span class="cp-tag">新添加</span></div>
+              ${isMeal ? "" : `<div class="cp-vote-marks" data-vote-marks="${placeId}"></div>`}
+            </div>
+            ${isMeal
+              ? `<button class="cp-save" type="button" aria-label="收藏${escapeHtml(name)}" aria-pressed="false">${icon("heart")}</button>`
+              : `<button class="cp-vote-btn" type="button" data-vote-place="${placeId}" aria-label="为${escapeHtml(name)}投票" aria-pressed="false">${icon("vote")}<span>投票</span></button>`
+            }
+          </article>
         `;
       }
 
       function addItem(type, name, category, detail) {
-        const list = root.querySelector(type === &quot;meal&quot; ? &quot;#cp-meal-list&quot; : &quot;#cp-place-list&quot;);
-        list.insertAdjacentHTML(&quot;beforeend&quot;, makeItem(type, name, category, detail));
-        customItems.push({ type, name, category, detail });
-        const filterGroup = type === &quot;meal&quot; ? &quot;[data-meal-filter]&quot; : &quot;[data-place-filter]&quot;;
-        root.querySelector(`${filterGroup}[aria-pressed=&quot;true&quot;]`)?.click();
+        const list = root.querySelector(type === "meal" ? "#cp-meal-list" : "#cp-place-list");
+        const id = type === "place" ? `custom-${Date.now().toString(36)}` : null;
+        list.insertAdjacentHTML("beforeend", makeItem(type, name, category, detail, { id }));
+        customItems.push({ type, name, category, detail, ...(id ? { id } : {}) });
+        const filterGroup = type === "meal" ? "[data-meal-filter]" : "[data-place-filter]";
+        root.querySelector(`${filterGroup}[aria-pressed="true"]`)?.click();
         refreshIcons();
-        showFlash(type === &quot;meal&quot; ? &quot;新的心愿已经加入菜单&quot; : &quot;新的约会地点已经加入&quot;);
+        showFlash(type === "meal" ? "新的心愿已经加入菜单" : "新的约会地点已经加入");
+        if (type === "place") renderVoteBoard();
         saveState();
       }
 
-      navButtons.forEach((button) =&gt; {
-        button.addEventListener(&quot;click&quot;, () =&gt; showView(button.dataset.nav));
+      navButtons.forEach((button) => {
+        button.addEventListener("click", () => showView(button.dataset.nav));
       });
 
-      goButtons.forEach((button) =&gt; {
-        button.addEventListener(&quot;click&quot;, () =&gt; showView(button.dataset.go));
+      goButtons.forEach((button) => {
+        button.addEventListener("click", () => showView(button.dataset.go));
       });
 
-      root.querySelectorAll(&quot;[data-random]&quot;).forEach((button) =&gt; {
-        button.addEventListener(&quot;click&quot;, () =&gt; openRandomResult(button.dataset.random, button));
+      root.querySelectorAll("[data-random]").forEach((button) => {
+        button.addEventListener("click", () => openRandomResult(button.dataset.random, button));
       });
 
-      root.querySelector(&quot;#cp-luck-home&quot;).addEventListener(&quot;click&quot;, (event) =&gt; {
-        const type = Math.random() &gt; 0.5 ? &quot;meal&quot; : &quot;place&quot;;
+      root.querySelector("#cp-luck-home").addEventListener("click", (event) => {
+        const type = Math.random() > 0.5 ? "meal" : "place";
         openRandomResult(type, event.currentTarget);
       });
 
-      root.querySelector(&quot;#cp-open-couple&quot;).addEventListener(&quot;click&quot;, (event) =&gt; {
+      shareVoteButton.addEventListener("click", openVoteShareDialog);
+
+      root.querySelector("#cp-open-couple").addEventListener("click", (event) => {
         lastFocused = event.currentTarget;
         openDialog(`
-          &lt;div class=&quot;cp-dialog-head&quot;&gt;
-            &lt;span class=&quot;cp-dialog-badge&quot;&gt;${icon(&quot;users&quot;)}&lt;/span&gt;
-            &lt;button class=&quot;cp-dialog-close&quot; type=&quot;button&quot; data-close-dialog aria-label=&quot;关闭&quot;&gt;${icon(&quot;x&quot;)}&lt;/button&gt;
-          &lt;/div&gt;
-          &lt;p class=&quot;cp-dialog-kicker&quot;&gt;两个人专属的小空间&lt;/p&gt;
-          &lt;h3 id=&quot;cp-dialog-title&quot;&gt;把邀请码发给你最想一起生活的人&lt;/h3&gt;
-          &lt;p&gt;对方输入后，就会加入同一份点菜和出游清单。&lt;/p&gt;
-          &lt;div class=&quot;cp-invite-code&quot;&gt;
-            &lt;span&gt;你们的邀请码&lt;/span&gt;
-            &lt;strong&gt;MILK-2510&lt;/strong&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;cp-dialog-actions&quot;&gt;
-            &lt;button class=&quot;cp-secondary&quot; type=&quot;button&quot; data-close-dialog&gt;稍后再说&lt;/button&gt;
-            &lt;button class=&quot;cp-primary&quot; type=&quot;button&quot; id=&quot;cp-copy-code&quot;&gt;${icon(&quot;copy&quot;)} 复制邀请码&lt;/button&gt;
-          &lt;/div&gt;
+          <div class="cp-dialog-head">
+            <span class="cp-dialog-badge">${icon("users")}</span>
+            <button class="cp-dialog-close" type="button" data-close-dialog aria-label="关闭">${icon("x")}</button>
+          </div>
+          <p class="cp-dialog-kicker">两个人专属的小空间</p>
+          <h3 id="cp-dialog-title">你们怎么称呼彼此？</h3>
+          <p>名字会显示在页面顶部，也会跟着共同投票链接一起发给对方。</p>
+          <div class="cp-name-grid">
+            <div class="cp-field">
+              <label for="cp-name-one">你的名字</label>
+              <input id="cp-name-one" autocomplete="off" value="${escapeHtml(coupleNames[0])}">
+            </div>
+            <div class="cp-field">
+              <label for="cp-name-two">对方的名字</label>
+              <input id="cp-name-two" autocomplete="off" value="${escapeHtml(coupleNames[1])}">
+            </div>
+          </div>
+          <div class="cp-dialog-actions">
+            <button class="cp-secondary" type="button" data-close-dialog>稍后再说</button>
+            <button class="cp-primary" type="button" data-save-names>${icon("check")} 保存名字</button>
+          </div>
         `);
       });
 
-      dialog.addEventListener(&quot;click&quot;, (event) =&gt; {
-        const closeButton = event.target.closest(&quot;[data-close-dialog]&quot;);
-        const rerollButton = event.target.closest(&quot;[data-reroll]&quot;);
-        const confirmButton = event.target.closest(&quot;[data-confirm-pick]&quot;);
-        const copyButton = event.target.closest(&quot;#cp-copy-code&quot;);
+      dialog.addEventListener("click", (event) => {
+        const closeButton = event.target.closest("[data-close-dialog]");
+        const rerollButton = event.target.closest("[data-reroll]");
+        const confirmButton = event.target.closest("[data-confirm-pick]");
+        const saveNamesButton = event.target.closest("[data-save-names]");
+        const copyBallotButton = event.target.closest("[data-copy-ballot]");
 
         if (closeButton) {
           closeDialog();
@@ -3485,117 +2217,137 @@ html&gt;body{padding:0}&lt;/style&gt;
           return;
         }
 
-        if (copyButton) {
-          const copy = navigator.clipboard &amp;&amp; navigator.clipboard.writeText
-            ? navigator.clipboard.writeText(&quot;MILK-2510&quot;)
-            : Promise.resolve();
-          copy.then(() =&gt; {
-            copyButton.innerHTML = `${icon(&quot;check&quot;)} 已复制`;
+        if (saveNamesButton) {
+          const one = safeName(dialog.querySelector("#cp-name-one")?.value, coupleNames[0]);
+          const two = safeName(dialog.querySelector("#cp-name-two")?.value, coupleNames[1]);
+          coupleNames = [one, two];
+          updateCoupleUI();
+          renderVoteBoard();
+          closeDialog();
+          showFlash("你们的称呼已经更新");
+          saveState();
+          return;
+        }
+
+        if (copyBallotButton) {
+          const input = dialog.querySelector("#cp-ballot-url");
+          const copy = navigator.clipboard && navigator.clipboard.writeText
+            ? navigator.clipboard.writeText(input.value)
+            : Promise.reject(new Error("clipboard unavailable"));
+          copy.then(() => {
+            copyBallotButton.innerHTML = `${icon("check")} 已复制`;
             refreshIcons();
-          }).catch(() =&gt; {
-            copyButton.textContent = &quot;邀请码：MILK-2510&quot;;
+          }).catch(() => {
+            input.focus();
+            input.select();
+            showFlash("链接已选中，请手动复制");
           });
         }
       });
 
-      dialogLayer.addEventListener(&quot;click&quot;, (event) =&gt; {
+      dialogLayer.addEventListener("click", (event) => {
         if (event.target === dialogLayer) closeDialog();
       });
 
-      document.addEventListener(&quot;keydown&quot;, (event) =&gt; {
-        if (event.key === &quot;Escape&quot; &amp;&amp; !dialogLayer.hidden) closeDialog();
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !dialogLayer.hidden) closeDialog();
       });
 
-      root.querySelector(&quot;#cp-add-meal-toggle&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+      root.querySelector("#cp-add-meal-toggle").addEventListener("click", () => {
         mealForm.hidden = !mealForm.hidden;
-        if (!mealForm.hidden) root.querySelector(&quot;#cp-meal-name&quot;).focus();
+        if (!mealForm.hidden) root.querySelector("#cp-meal-name").focus();
       });
 
-      root.querySelector(&quot;#cp-meal-cancel&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+      root.querySelector("#cp-meal-cancel").addEventListener("click", () => {
         mealForm.hidden = true;
       });
 
       function saveMeal(event) {
         event?.preventDefault();
-        const name = root.querySelector(&quot;#cp-meal-name&quot;).value.trim();
-        const category = root.querySelector(&quot;#cp-meal-type&quot;).value;
-        const detail = root.querySelector(&quot;#cp-meal-detail&quot;).value.trim();
+        const name = root.querySelector("#cp-meal-name").value.trim();
+        const category = root.querySelector("#cp-meal-type").value;
+        const detail = root.querySelector("#cp-meal-detail").value.trim();
         if (!name || !detail) return;
-        addItem(&quot;meal&quot;, name, category, detail);
+        addItem("meal", name, category, detail);
         mealForm.reset();
         mealForm.hidden = true;
       }
 
-      mealForm.addEventListener(&quot;submit&quot;, saveMeal);
-      root.querySelector(&quot;#cp-meal-save&quot;).addEventListener(&quot;click&quot;, saveMeal);
+      mealForm.addEventListener("submit", saveMeal);
+      root.querySelector("#cp-meal-save").addEventListener("click", saveMeal);
 
-      root.querySelector(&quot;#cp-add-place-toggle&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+      root.querySelector("#cp-add-place-toggle").addEventListener("click", () => {
         placeForm.hidden = !placeForm.hidden;
-        if (!placeForm.hidden) root.querySelector(&quot;#cp-place-name&quot;).focus();
+        if (!placeForm.hidden) root.querySelector("#cp-place-name").focus();
       });
 
-      root.querySelector(&quot;#cp-place-cancel&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+      root.querySelector("#cp-place-cancel").addEventListener("click", () => {
         placeForm.hidden = true;
       });
 
       function savePlace(event) {
         event?.preventDefault();
-        const name = root.querySelector(&quot;#cp-place-name&quot;).value.trim();
-        const category = root.querySelector(&quot;#cp-place-type&quot;).value;
-        const detail = root.querySelector(&quot;#cp-place-detail&quot;).value.trim();
+        const name = root.querySelector("#cp-place-name").value.trim();
+        const category = root.querySelector("#cp-place-type").value;
+        const detail = root.querySelector("#cp-place-detail").value.trim();
         if (!name || !detail) return;
-        addItem(&quot;place&quot;, name, category, detail);
+        addItem("place", name, category, detail);
         placeForm.reset();
         placeForm.hidden = true;
       }
 
-      placeForm.addEventListener(&quot;submit&quot;, savePlace);
-      root.querySelector(&quot;#cp-place-save&quot;).addEventListener(&quot;click&quot;, savePlace);
+      placeForm.addEventListener("submit", savePlace);
+      root.querySelector("#cp-place-save").addEventListener("click", savePlace);
 
-      root.querySelectorAll(&quot;[data-meal-filter]&quot;).forEach((button) =&gt; {
-        button.addEventListener(&quot;click&quot;, () =&gt; {
+      root.querySelectorAll("[data-meal-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
           const filter = button.dataset.mealFilter;
-          root.querySelectorAll(&quot;[data-meal-filter]&quot;).forEach((peer) =&gt; {
-            peer.setAttribute(&quot;aria-pressed&quot;, String(peer === button));
+          root.querySelectorAll("[data-meal-filter]").forEach((peer) => {
+            peer.setAttribute("aria-pressed", String(peer === button));
           });
-          root.querySelectorAll(&quot;#cp-meal-list .cp-item&quot;).forEach((item) =&gt; {
-            item.hidden = filter !== &quot;all&quot; &amp;&amp; item.dataset.category !== filter;
+          root.querySelectorAll("#cp-meal-list .cp-item").forEach((item) => {
+            item.hidden = filter !== "all" && item.dataset.category !== filter;
           });
         });
       });
 
-      root.querySelectorAll(&quot;[data-place-filter]&quot;).forEach((button) =&gt; {
-        button.addEventListener(&quot;click&quot;, () =&gt; {
+      root.querySelectorAll("[data-place-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
           const filter = button.dataset.placeFilter;
-          root.querySelectorAll(&quot;[data-place-filter]&quot;).forEach((peer) =&gt; {
-            peer.setAttribute(&quot;aria-pressed&quot;, String(peer === button));
+          root.querySelectorAll("[data-place-filter]").forEach((peer) => {
+            peer.setAttribute("aria-pressed", String(peer === button));
           });
-          root.querySelectorAll(&quot;#cp-place-list .cp-item&quot;).forEach((item) =&gt; {
-            const matches = filter === &quot;all&quot;
+          root.querySelectorAll("#cp-place-list .cp-item").forEach((item) => {
+            const matches = filter === "all"
               || item.dataset.category === filter
-              || (filter === &quot;free&quot; &amp;&amp; item.dataset.free === &quot;true&quot;);
+              || (filter === "free" && item.dataset.free === "true");
             item.hidden = !matches;
           });
         });
       });
 
-      root.addEventListener(&quot;click&quot;, (event) =&gt; {
-        const saveButton = event.target.closest(&quot;.cp-save&quot;);
+      root.addEventListener("click", (event) => {
+        const voteButton = event.target.closest("[data-vote-place]");
+        if (voteButton) {
+          togglePlaceVote(voteButton.dataset.votePlace);
+          return;
+        }
+        const saveButton = event.target.closest(".cp-save");
         if (!saveButton) return;
-        const saved = saveButton.getAttribute(&quot;aria-pressed&quot;) === &quot;true&quot;;
-        saveButton.setAttribute(&quot;aria-pressed&quot;, String(!saved));
-        saveButton.classList.toggle(&quot;is-saved&quot;, !saved);
-        const cardTitle = saveButton.closest(&quot;.cp-item&quot;)?.dataset.title || &quot;这个选项&quot;;
+        const saved = saveButton.getAttribute("aria-pressed") === "true";
+        saveButton.setAttribute("aria-pressed", String(!saved));
+        saveButton.classList.toggle("is-saved", !saved);
+        const cardTitle = saveButton.closest(".cp-item")?.dataset.title || "这个选项";
         showFlash(saved ? `已取消收藏 ${cardTitle}` : `已收藏 ${cardTitle}`);
         saveState();
       });
 
       function restorePrivateState(state) {
-        if (!state || typeof state !== &quot;object&quot;) return;
+        if (!state || typeof state !== "object") return;
 
-        if (Array.isArray(state.memoryItems) &amp;&amp; state.memoryItems.length) {
+        if (Array.isArray(state.memoryItems) && state.memoryItems.length) {
           const validMemories = state.memoryItems
-            .filter((item) =&gt; item &amp;&amp; [&quot;title&quot;, &quot;date&quot;, &quot;note&quot;, &quot;rating&quot;, &quot;icon&quot;].every((key) =&gt; typeof item[key] === &quot;string&quot;))
+            .filter((item) => item && ["title", "date", "note", "rating", "icon"].every((key) => typeof item[key] === "string"))
             .slice(0, 12);
           if (validMemories.length) {
             memoryItems.splice(0, memoryItems.length, ...validMemories);
@@ -3604,828 +2356,64 @@ html&gt;body{padding:0}&lt;/style&gt;
         }
 
         if (Array.isArray(state.customItems)) {
-          const validItems = state.customItems.filter((item) =&gt; (
+          const validItems = state.customItems.filter((item) => (
             item
-            &amp;&amp; [&quot;meal&quot;, &quot;place&quot;].includes(item.type)
-            &amp;&amp; [&quot;name&quot;, &quot;category&quot;, &quot;detail&quot;].every((key) =&gt; typeof item[key] === &quot;string&quot;)
+            && ["meal", "place"].includes(item.type)
+            && ["name", "category", "detail"].every((key) => typeof item[key] === "string")
           ));
           customItems.splice(0, customItems.length, ...validItems);
-          root.querySelectorAll(&quot;[data-custom-item]&quot;).forEach((item) =&gt; item.remove());
-          validItems.forEach((item) =&gt; {
-            const list = root.querySelector(item.type === &quot;meal&quot; ? &quot;#cp-meal-list&quot; : &quot;#cp-place-list&quot;);
-            list.insertAdjacentHTML(&quot;beforeend&quot;, makeItem(item.type, item.name, item.category, item.detail));
+          root.querySelectorAll("[data-custom-item]").forEach((item) => item.remove());
+          validItems.forEach((item) => {
+            const list = root.querySelector(item.type === "meal" ? "#cp-meal-list" : "#cp-place-list");
+            list.insertAdjacentHTML("beforeend", makeItem(item.type, item.name, item.category, item.detail, { id: item.id }));
           });
           refreshIcons();
         }
 
-        const validViews = screens.map((screen) =&gt; screen.dataset.screen);
+        if (!queryParams.has("n1") && Array.isArray(state.coupleNames) && state.coupleNames.length === 2) {
+          coupleNames = [
+            safeName(state.coupleNames[0], coupleNames[0]),
+            safeName(state.coupleNames[1], coupleNames[1])
+          ];
+          updateCoupleUI();
+        }
+
+        if (!queryParams.has("a") && state.votes && typeof state.votes === "object") {
+          sharedVotes.a = new Set(parseIdList(Array.isArray(state.votes.a) ? state.votes.a.join(",") : ""));
+          sharedVotes.b = new Set(parseIdList(Array.isArray(state.votes.b) ? state.votes.b.join(",") : ""));
+          renderVoteBoard();
+        }
+
+        const validViews = screens.map((screen) => screen.dataset.screen);
         if (validViews.includes(state.activeView)) {
           showView(state.activeView, false);
         }
       }
+
+      const sharedPlaces = parseSharedPlaces(queryParams.get("p"));
+      if (sharedPlaces) renderPlaceCatalog(sharedPlaces);
+      coupleNames = [
+        safeName(queryParams.get("n1"), coupleNames[0]),
+        safeName(queryParams.get("n2"), coupleNames[1])
+      ];
+      updateCoupleUI();
+      updateDateLabel();
+      renderVoteBoard();
 
       const savedState = window.openai?.widgetState;
       if (savedState?.privateContent) {
         restorePrivateState(savedState.privateContent);
       }
 
-      window.addEventListener(&quot;openai:set_globals&quot;, (event) =&gt; {
+      window.addEventListener("openai:set_globals", (event) => {
         const nextState = event.detail?.globals?.widgetState?.privateContent;
         if (nextState) restorePrivateState(nextState);
       });
 
       refreshIcons();
     })();
-  &lt;/script&gt;
-&lt;/div&gt;
+  </script>
+</div>
 
-&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  if (window.FloatingUIDOM == null) {
-    return;
-  }
-  const { autoUpdate, computePosition, flip, offset, shift, size } =
-    window.FloatingUIDOM;
-  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
-  const tooltipId = `codex-visualization-tooltip-${
-    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
-  }`;
-  const tooltipGap = 5;
-  const hoverDelay = 700;
-  const skipDelay = 300;
-  let activeTrigger = null;
-  let pendingTrigger = null;
-  let tooltip = null;
-  let openTimeout = null;
-  let autoUpdateCleanup = null;
-  let positionRequest = 0;
-  let skipDelayUntil = 0;
-  let lastPointerWasTouch = false;
-  let pinnedByTouch = false;
-
-  const getTrigger = (event) =&gt; {
-    for (const target of event.composedPath()) {
-      if (target?.nodeType === Node.ELEMENT_NODE) {
-        const trigger = target.closest(&quot;[data-tooltip]&quot;);
-        if (trigger) return trigger;
-      }
-    }
-    return null;
-  };
-  const containsTarget = (trigger, target) =&gt;
-    target?.nodeType != null &amp;&amp; trigger.contains(target);
-  const getContent = (trigger) =&gt;
-    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
-  const getPlacement = (trigger) =&gt; {
-    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
-    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
-  };
-  const getTooltip = () =&gt; {
-    if (tooltip == null) {
-      tooltip = document.createElement(&quot;div&quot;);
-      tooltip.id = tooltipId;
-      tooltip.className = &quot;tooltip&quot;;
-      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
-    }
-    return tooltip;
-  };
-  const setDescribedBy = (trigger, described) =&gt; {
-    const ids = new Set(
-      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
-        .split(/\s+/)
-        .filter(Boolean),
-    );
-    if (described) {
-      ids.add(tooltipId);
-    } else {
-      ids.delete(tooltipId);
-    }
-    if (ids.size === 0) {
-      trigger.removeAttribute(&quot;aria-describedby&quot;);
-    } else {
-      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
-    }
-  };
-  const clearOpenTimeout = () =&gt; {
-    if (openTimeout != null) {
-      window.clearTimeout(openTimeout);
-      openTimeout = null;
-    }
-    pendingTrigger = null;
-  };
-  const closeTooltip = (activateSkipDelay = true) =&gt; {
-    clearOpenTimeout();
-    pinnedByTouch = false;
-    positionRequest += 1;
-    autoUpdateCleanup?.();
-    autoUpdateCleanup = null;
-    if (activeTrigger == null) {
-      return;
-    }
-    setDescribedBy(activeTrigger, false);
-    activeTrigger = null;
-    tooltip?.remove();
-    if (activateSkipDelay) {
-      skipDelayUntil = Date.now() + skipDelay;
-    }
-  };
-  const updatePosition = (trigger, floating) =&gt; {
-    const request = ++positionRequest;
-    void computePosition(trigger, floating, {
-      middleware: [
-        offset(tooltipGap),
-        flip({ padding: tooltipGap }),
-        shift({ padding: tooltipGap }),
-        size({
-          padding: tooltipGap,
-          apply({ availableHeight, availableWidth, elements }) {
-            elements.floating.style.setProperty(
-              &quot;--tooltip-available-width&quot;,
-              `${Math.max(0, availableWidth)}px`,
-            );
-            elements.floating.style.setProperty(
-              &quot;--tooltip-available-height&quot;,
-              `${Math.max(0, availableHeight)}px`,
-            );
-          },
-        }),
-      ],
-      placement: getPlacement(trigger),
-      strategy: &quot;fixed&quot;,
-    })
-      .then(({ x, y }) =&gt; {
-        if (activeTrigger !== trigger || request !== positionRequest) {
-          return;
-        }
-        const scale = window.devicePixelRatio || 1;
-        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
-        floating.style.visibility = &quot;visible&quot;;
-      })
-      .catch(() =&gt; {
-        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
-          closeTooltip(false);
-        }
-      });
-  };
-  const openTooltip = (trigger) =&gt; {
-    const content = getContent(trigger);
-    if (!trigger.isConnected || content.length === 0) {
-      return;
-    }
-    clearOpenTimeout();
-    if (activeTrigger === trigger) {
-      return;
-    }
-    closeTooltip();
-    const floating = getTooltip();
-    floating.textContent = content;
-    floating.style.visibility = &quot;hidden&quot;;
-    floating.style.transform = &quot;translate(0, 0)&quot;;
-    document.body.appendChild(floating);
-    activeTrigger = trigger;
-    setDescribedBy(trigger, true);
-    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
-      updatePosition(trigger, floating);
-    });
-  };
-  const requestOpen = (trigger, immediate = false) =&gt; {
-    if (
-      getContent(trigger).length === 0 ||
-      activeTrigger === trigger ||
-      pendingTrigger === trigger
-    ) {
-      return;
-    }
-    clearOpenTimeout();
-    pendingTrigger = trigger;
-    const delay =
-      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
-        ? 0
-        : hoverDelay;
-    if (delay === 0) {
-      openTooltip(trigger);
-      return;
-    }
-    openTimeout = window.setTimeout(() =&gt; {
-      openTimeout = null;
-      pendingTrigger = null;
-      openTooltip(trigger);
-    }, delay);
-  };
-  const handlePointerOpen = (event) =&gt; {
-    if (event.pointerType === &quot;touch&quot;) {
-      return;
-    }
-    const trigger = getTrigger(event);
-    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
-      return;
-    }
-    requestOpen(trigger);
-  };
-  const handlePointer = (event) =&gt; {
-    lastPointerWasTouch =
-      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
-  };
-  const handleTouchClick = (event) =&gt; {
-    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
-    lastPointerWasTouch = false;
-    if (!isTouch || event.detail === 0) {
-      return;
-    }
-    const trigger = getTrigger(event);
-    if (
-      trigger == null ||
-      !trigger.isConnected ||
-      getContent(trigger).length === 0 ||
-      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
-    ) {
-      if (pinnedByTouch) {
-        closeTooltip();
-      }
-      return;
-    }
-    openTooltip(trigger);
-    pinnedByTouch = activeTrigger === trigger;
-    window.setTimeout(() =&gt; {
-      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
-        closeTooltip(false);
-      }
-    }, 0);
-  };
-  const handleLeave = (event) =&gt; {
-    if (pinnedByTouch) {
-      return;
-    }
-    const trigger = getTrigger(event);
-    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
-      return;
-    }
-    if (activeTrigger === trigger || pendingTrigger === trigger) {
-      closeTooltip();
-    }
-  };
-  const handleFocusIn = (event) =&gt; {
-    const trigger = getTrigger(event);
-    if (trigger?.matches(&quot;:focus-visible&quot;)) {
-      requestOpen(trigger, true);
-    }
-  };
-  const handleKeyDown = (event) =&gt; {
-    if (event.key === &quot;Escape&quot;) {
-      closeTooltip();
-    }
-  };
-  const handleContextMenu = (event) =&gt; {
-    lastPointerWasTouch = false;
-    const trigger = getTrigger(event);
-    if (activeTrigger === trigger || pendingTrigger === trigger) {
-      closeTooltip();
-    }
-  };
-  const handlers = {
-    pointerover: handlePointerOpen,
-    pointerdown: handlePointer,
-    pointercancel: handlePointer,
-    click: handleTouchClick,
-    pointerout: handleLeave,
-    focusin: handleFocusIn,
-    focusout: handleLeave,
-    keydown: handleKeyDown,
-    contextmenu: handleContextMenu,
-  };
-  const roots = new Map();
-  const handledEvents = new WeakSet();
-  const handleEvent = (event) =&gt; {
-    if (handledEvents.has(event)) return;
-    handledEvents.add(event);
-    handlers[event.type](event);
-  };
-  const discoverRoots = (node) =&gt; {
-    if (node.shadowRoot) listen(node.shadowRoot);
-    for (const element of node.querySelectorAll(&quot;*&quot;)) {
-      if (element.shadowRoot) listen(element.shadowRoot);
-    }
-  };
-  const listen = (root) =&gt; {
-    if (roots.has(root)) return;
-    for (const type of Object.keys(handlers)) root.addEventListener(type, handleEvent);
-    const observer = new window.MutationObserver((records) =&gt; {
-      for (const { addedNodes } of records) {
-        for (const node of addedNodes) {
-          if (node.nodeType === Node.ELEMENT_NODE) discoverRoots(node);
-        }
-      }
-      for (const [root, cleanup] of roots) {
-        if (root.host &amp;&amp; !root.host.isConnected) {
-          cleanup();
-          roots.delete(root);
-        }
-      }
-      if (activeTrigger &amp;&amp; !activeTrigger.isConnected) closeTooltip(false);
-    });
-    observer.observe(root, { childList: true, subtree: true });
-    roots.set(root, () =&gt; {
-      observer.disconnect();
-      for (const type of Object.keys(handlers)) root.removeEventListener(type, handleEvent);
-    });
-    discoverRoots(root);
-  };
-  const destroy = () =&gt; {
-    closeTooltip(false);
-    lastPointerWasTouch = false;
-    for (const cleanup of roots.values()) cleanup();
-    roots.clear();
-    tooltip = null;
-  };
-
-  // Events between children of one shadow root never reach the document.
-  listen(document);
-  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
-})();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
-(() =&gt; {
-  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
-  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
-  const selectTab = (selected) =&gt; {
-    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
-    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
-      const active = tab === selected;
-      tab.classList.toggle(&quot;active&quot;, active);
-      tab.setAttribute(&quot;aria-selected&quot;, String(active));
-      const id = tab.getAttribute(&quot;aria-controls&quot;);
-      const panel = id &amp;&amp; document.getElementById(id);
-      if (panel != null) {
-        panel.hidden = id !== panelId;
-        if (!panel.hidden &amp;&amp; selected.id) {
-          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
-        }
-      }
-    }
-  };
-  const interact = (event) =&gt; {
-    const tab = event.target?.closest?.(selector);
-    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
-      return;
-    }
-    if (event.type === &quot;click&quot;) {
-      selectTab(tab);
-      return;
-    }
-    const tabs = Array.from(
-      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
-    ).filter((candidate) =&gt; !candidate.matches(disabled));
-    const current = tabs.indexOf(tab);
-    let next;
-    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
-      next = (current + 1) % tabs.length;
-    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
-      next = (current + tabs.length - 1) % tabs.length;
-    } else if (event.key === &quot;Home&quot;) {
-      next = 0;
-    } else if (event.key === &quot;End&quot;) {
-      next = tabs.length - 1;
-    } else {
-      return;
-    }
-    event.preventDefault();
-    tabs[next].focus();
-    selectTab(tabs[next]);
-  };
-
-  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
-    const selected =
-      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
-      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
-      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
-    if (selected != null) {
-      selectTab(selected);
-    }
-  }
-  document.addEventListener(&quot;click&quot;, interact);
-  document.addEventListener(&quot;keydown&quot;, interact);
-  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
-    document.removeEventListener(&quot;click&quot;, interact);
-    document.removeEventListener(&quot;keydown&quot;, interact);
-  }, { once: true });
-})();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-carousel&quot;&gt;
-  (() =&gt; {
-    for (const root of document.querySelectorAll(&quot;.viz-carousel&quot;)) {
-      const panels = Array.from(
-        root.querySelectorAll(&quot;:scope &gt; [data-variant]&quot;),
-      );
-      if (panels.length === 0) {
-        continue;
-      }
-      root.setAttribute(&quot;role&quot;, &quot;group&quot;);
-      panels.forEach((panel, index) =&gt; {
-        panel.hidden = index !== 0;
-        panel.setAttribute(&quot;role&quot;, &quot;group&quot;);
-        if (!panel.hasAttribute(&quot;aria-label&quot;)) {
-          panel.setAttribute(&quot;aria-label&quot;, panel.dataset.variant);
-        }
-      });
-      root.dataset.activeVariant = panels[0].dataset.variant;
-      if (panels.length === 1) {
-        continue;
-      }
-
-      const controls = document.createElement(&quot;div&quot;);
-      controls.className = &quot;viz-carousel-controls&quot;;
-      // Portable copy of the settings dropdown&#x27;s legacy glyph; no 14px icon-package preset matches it.
-      // https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg
-      controls.innerHTML = `
-      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-previous cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-      &lt;details class=&quot;viz-carousel-picker&quot;&gt;
-        &lt;summary class=&quot;cursor-interaction&quot;&gt;
-          &lt;span class=&quot;viz-carousel-count tabular-nums&quot;&gt;&lt;/span&gt;
-          &lt;span class=&quot;viz-carousel-name&quot;&gt;&lt;/span&gt;
-          &lt;svg class=&quot;viz-carousel-caret&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 20 21&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
-            &lt;path d=&quot;M15.2793 7.71101C15.539 7.45131 15.961 7.45131 16.2207 7.71101C16.4804 7.97071 16.4804 8.39272 16.2207 8.65242L10.4707 14.4024C10.211 14.6621 9.78902 14.6621 9.52932 14.4024L3.77932 8.65242L3.69436 8.54792C3.52385 8.28979 3.55205 7.93828 3.77932 7.71101C4.00659 7.48374 4.3581 7.45554 4.61623 7.62605L4.72073 7.71101L10 12.9903L15.2793 7.71101Z&quot; fill=&quot;currentColor&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;0.6&quot; /&gt;
-          &lt;/svg&gt;
-        &lt;/summary&gt;
-        &lt;div class=&quot;viz-carousel-options&quot;&gt;&lt;/div&gt;
-      &lt;/details&gt;
-      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-next cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;`;
-      const previous = controls.querySelector(&quot;.viz-carousel-previous&quot;);
-      const next = controls.querySelector(&quot;.viz-carousel-next&quot;);
-      const picker = controls.querySelector(&quot;.viz-carousel-picker&quot;);
-      const summary = picker.querySelector(&quot;summary&quot;);
-      const count = controls.querySelector(&quot;.viz-carousel-count&quot;);
-      const name = controls.querySelector(&quot;.viz-carousel-name&quot;);
-      const options = controls.querySelector(&quot;.viz-carousel-options&quot;);
-      const status = document.createElement(&quot;span&quot;);
-      status.className = &quot;sr-only&quot;;
-      status.setAttribute(&quot;role&quot;, &quot;status&quot;);
-      status.setAttribute(&quot;aria-live&quot;, &quot;polite&quot;);
-      status.setAttribute(&quot;aria-atomic&quot;, &quot;true&quot;);
-      previous.setAttribute(
-        &quot;aria-label&quot;,
-        root.dataset.previousLabel ?? &quot;Previous variant&quot;,
-      );
-      next.setAttribute(&quot;aria-label&quot;, root.dataset.nextLabel ?? &quot;Next variant&quot;);
-
-      let active = 0;
-      let mousePointerId = null;
-      let summaryPointerHandled = false;
-      summary.addEventListener(&quot;pointerdown&quot;, (event) =&gt; {
-        summaryPointerHandled =
-          event.pointerType === &quot;mouse&quot; &amp;&amp; event.button === 0 &amp;&amp; !event.ctrlKey;
-        if (!summaryPointerHandled) {
-          return;
-        }
-        event.preventDefault();
-        summary.focus({ preventScroll: true });
-        picker.open = !picker.open;
-        mousePointerId = picker.open ? event.pointerId : null;
-      });
-      summary.addEventListener(&quot;click&quot;, (event) =&gt; {
-        if (summaryPointerHandled &amp;&amp; event.detail &gt; 0) {
-          event.preventDefault();
-        }
-      });
-      const choices = panels.map((panel, index) =&gt; {
-        const choice = document.createElement(&quot;button&quot;);
-        choice.type = &quot;button&quot;;
-        choice.className = &quot;cursor-interaction&quot;;
-        choice.textContent = panel.dataset.variant;
-        choice.addEventListener(&quot;click&quot;, () =&gt; {
-          select(index);
-          summary.focus();
-        });
-        choice.addEventListener(&quot;pointerup&quot;, (event) =&gt; {
-          if (
-            picker.open &amp;&amp;
-            event.pointerType === &quot;mouse&quot; &amp;&amp;
-            event.button === 0 &amp;&amp;
-            event.pointerId === mousePointerId
-          ) {
-            choice.click();
-          }
-        });
-        options.appendChild(choice);
-        return choice;
-      });
-      const select = (index) =&gt; {
-        const changed = active !== index;
-        active = index;
-        panels.forEach((panel, position) =&gt; {
-          panel.hidden = position !== active;
-          choices[position].setAttribute(
-            &quot;aria-current&quot;,
-            String(position === active),
-          );
-        });
-        root.dataset.activeVariant = panels[active].dataset.variant;
-        count.textContent = `${active + 1} / ${panels.length}`;
-        name.textContent = panels[active].dataset.variant;
-        picker.open = false;
-        mousePointerId = null;
-        if (changed) {
-          status.textContent = `${count.textContent}: ${name.textContent}`;
-        }
-      };
-      previous.addEventListener(&quot;click&quot;, () =&gt;
-        select((active + panels.length - 1) % panels.length),
-      );
-      next.addEventListener(&quot;click&quot;, () =&gt;
-        select((active + 1) % panels.length),
-      );
-      picker.addEventListener(&quot;keydown&quot;, (event) =&gt; {
-        if (event.key === &quot;Escape&quot; &amp;&amp; picker.open) {
-          event.preventDefault();
-          picker.open = false;
-          mousePointerId = null;
-          summary.focus();
-          return;
-        }
-        if (event.altKey || event.ctrlKey || event.metaKey) {
-          return;
-        }
-        const index = choices.indexOf(document.activeElement);
-        let nextIndex;
-        if (event.key === &quot;ArrowDown&quot;) {
-          nextIndex = index &lt; 0 ? active : (index + 1) % choices.length;
-        } else if (event.key === &quot;ArrowUp&quot;) {
-          nextIndex = index &lt; 0 ? active : (index + choices.length - 1) % choices.length;
-        } else if (picker.open &amp;&amp; event.key === &quot;Home&quot;) {
-          nextIndex = 0;
-        } else if (picker.open &amp;&amp; event.key === &quot;End&quot;) {
-          nextIndex = choices.length - 1;
-        } else {
-          return;
-        }
-        event.preventDefault();
-        picker.open = true;
-        choices[nextIndex].focus();
-      });
-      picker.addEventListener(&quot;focusout&quot;, (event) =&gt; {
-        if (!picker.contains(event.relatedTarget)) {
-          picker.open = false;
-          mousePointerId = null;
-        }
-      });
-      const dismiss = (event) =&gt; {
-        if (!summary.contains(event.target)) {
-          mousePointerId = null;
-        }
-        if (!picker.contains(event.target)) {
-          picker.open = false;
-        }
-      };
-      const endPointerSelection = () =&gt; {
-        mousePointerId = null;
-      };
-      const sizePicker = () =&gt; {
-        root.style.setProperty(
-          &quot;--viz-carousel-picker-height&quot;,
-          `${picker.open ? options.offsetHeight : 0}px`,
-        );
-      };
-      picker.addEventListener(&quot;toggle&quot;, sizePicker);
-      window.addEventListener(&quot;resize&quot;, sizePicker);
-      document.addEventListener(&quot;pointerdown&quot;, dismiss);
-      document.addEventListener(&quot;pointerup&quot;, endPointerSelection);
-      document.addEventListener(&quot;pointercancel&quot;, endPointerSelection);
-      window.addEventListener(&quot;blur&quot;, endPointerSelection);
-      window.addEventListener(
-        &quot;pagehide&quot;,
-        () =&gt; {
-          document.removeEventListener(&quot;pointerdown&quot;, dismiss);
-          document.removeEventListener(&quot;pointerup&quot;, endPointerSelection);
-          document.removeEventListener(&quot;pointercancel&quot;, endPointerSelection);
-          window.removeEventListener(&quot;blur&quot;, endPointerSelection);
-          window.removeEventListener(&quot;resize&quot;, sizePicker);
-        },
-        { once: true },
-      );
-      root.append(controls, status);
-      select(0);
-    }
-  })();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  const initialize = () =&gt; {
-    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
-  };
-  if (globalThis.lucide != null) {
-    initialize();
-    return;
-  }
-  document
-    .getElementById(&quot;codex-visualization-lucide&quot;)
-    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
-})();
-&lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-"></iframe>
-
-<script>(() => {
-  const frame = document.getElementById("codex-visualization");
-  if (!(frame instanceof HTMLIFrameElement)) {
-    return;
-  }
-  let viewportHeight = globalThis.innerHeight;
-  const storageKey = `codex:visualization-widget-state-v2:${JSON.stringify([
-    globalThis.location.pathname,
-    globalThis.location.search,
-  ])}`;
-  const parseState = (serializedState) => {
-    if (
-      typeof serializedState !== "string" ||
-      new TextEncoder().encode(serializedState).length > 16 * 1024
-    ) {
-      throw new TypeError(
-        "Widget state must be a JSON object of at most 16 KiB",
-      );
-    }
-    /** @type {unknown} */
-    const state = JSON.parse(serializedState);
-    if (
-      state == null ||
-      typeof state !== "object" ||
-      Array.isArray(state) ||
-      ("imageIds" in state &&
-        (!Array.isArray(state.imageIds) || state.imageIds.length > 0))
-    ) {
-      throw new TypeError("Widget state must be a JSON object");
-    }
-    const storedState = { modelContent: null, privateContent: null, ...state };
-    const canonicalState = JSON.stringify(
-      storedState,
-      (_key, /** @type {unknown} */ value) => {
-        if (typeof value === "number" && !Number.isFinite(value)) {
-          throw new TypeError("Widget state must contain finite numbers");
-        }
-        return value;
-      },
-    );
-    if (new TextEncoder().encode(canonicalState).length > 16 * 1024) {
-      throw new TypeError(
-        "Widget state must be a JSON object of at most 16 KiB",
-      );
-    }
-    return storedState;
-  };
-  let storage = null;
-  let state = null;
-  try {
-    const localStorage = globalThis.localStorage;
-    const probeKey = `${storageKey}:probe`;
-    localStorage.setItem(probeKey, "1");
-    localStorage.removeItem(probeKey);
-    storage = localStorage;
-    const savedState = storage.getItem(storageKey);
-    if (savedState != null) {
-      try {
-        state = parseState(savedState);
-      } catch {
-        // Invalid saved state does not disable future writes.
-      }
-    }
-  } catch {
-    storage = null;
-  }
-  const initialGlobals = {
-    widgetState: state,
-    statePersistence: storage == null ? "none" : "local",
-  };
-
-  const channel = new MessageChannel();
-  channel.port1.addEventListener("message", (event) => {
-    const data = event.data;
-    if (typeof data !== "object" || data == null) {
-      return;
-    }
-    if (data.type === "widget-state-write") {
-      if (!Number.isSafeInteger(data.id) || data.id <= 0) {
-        return;
-      }
-      let ok = false;
-      try {
-        if (storage != null) {
-          const state = parseState(data.state);
-          storage.setItem(storageKey, JSON.stringify(state));
-          ok = true;
-        }
-      } catch {
-        // Storage denial, quota limits, and invalid state return a failed receipt.
-      }
-      channel.port1.postMessage({
-        type: "widget-state-result",
-        id: data.id,
-        ok,
-      });
-      return;
-    }
-    if (data.type === "height") {
-      const height = data.height;
-      if (
-        typeof height === "number" &&
-        Number.isFinite(height) &&
-        height >= 0 &&
-        height <= 10_000
-      ) {
-        frame.style.height = Math.ceil(height) + "px";
-      }
-      return;
-    }
-    if (data.type === "scroll-to") {
-      const top = data.top;
-      if (
-        typeof top === "number" &&
-        Number.isFinite(top) &&
-        top >= 0 &&
-        globalThis.navigator.userActivation?.isActive === true
-      ) {
-        globalThis.scrollTo({
-          top: Math.ceil(
-            globalThis.scrollY + frame.getBoundingClientRect().top + top,
-          ),
-        });
-      }
-      return;
-    }
-    if (data.type === "open-external") {
-      const rawHref = data.href;
-      if (typeof rawHref !== "string") {
-        return;
-      }
-      let href;
-      try {
-        const url = new URL(rawHref, document.baseURI);
-        if (url.protocol !== "https:") {
-          return;
-        }
-        href = url.href;
-      } catch {
-        return;
-      }
-      if (globalThis.navigator.userActivation?.isActive === true) {
-        const anchor = document.createElement("a");
-        anchor.href = href;
-        anchor.rel = "noopener noreferrer";
-        anchor.target = "_blank";
-        document.body.appendChild(anchor);
-        anchor.click();
-        anchor.remove();
-      }
-      return;
-    }
-    if (data.type === "follow-up") {
-      const prompt = data.prompt;
-      if (
-        typeof prompt !== "string" ||
-        globalThis.navigator.userActivation?.isActive !== true
-      ) {
-        return;
-      }
-      const title = data.title;
-      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
-    }
-  });
-  channel.port1.start();
-  const srcdoc = frame.dataset.srcdoc;
-  if (srcdoc == null) {
-    return;
-  }
-  globalThis.addEventListener("resize", () => {
-    const height = Number.parseFloat(frame.style.height);
-    if (!Number.isFinite(height) || height <= viewportHeight) {
-      frame.style.removeProperty("height");
-    }
-    viewportHeight = globalThis.innerHeight;
-    channel.port1.postMessage({ type: "measure" });
-  });
-  frame.addEventListener(
-    "load",
-    () => {
-      frame.contentWindow?.postMessage(
-        { type: "codex-visualization-initialize" },
-        "*",
-        [channel.port2],
-      );
-    },
-    { once: true },
-  );
-  // Match the trusted bootstrap element, not the same text in an authored title.
-  frame.srcdoc = srcdoc.replace(
-    '<script type="application/json" id="codex-visualization-widget-state">__CODEX_VISUALIZATION_WIDGET_STATE__<\/script>',
-    () =>
-      '<script type="application/json" id="codex-visualization-widget-state">' +
-      JSON.stringify(initialGlobals).replaceAll("<", "\\u003c") +
-      "<\/script>",
-  );
-  delete frame.dataset.srcdoc;
-})();
-</script>
 </body>
 </html>
